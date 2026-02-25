@@ -1,0 +1,36 @@
+dependencies:
+- name: gateway-api-crds
+  repository: file://./charts/gateway-api-crds
+  version: 1.4.1
+- name: gateway-api-inference-extension-crds
+  repository: file://./charts/gateway-api-inference-extension-crds
+  version: 1.2.1
+- name: base
+  repository: file://./charts/base
+  version: 1.28.1
+- name: istiod
+  repository: https://istio-release.storage.googleapis.com/charts
+  version: 1.28.1
+- name: inference-backend
+  repository: file://./charts/inference-backend
+  version: 0.21.2
+- name: hermes-router
+  repository: oci://cr.openfuyao.cn/charts
+  version: 0.20.1
+- name: cache-indexer
+  repository: oci://cr.openfuyao.cn/charts
+  version: 0.20.1
+- name: nats
+  repository: ""
+  version: 2.12.1
+- name: hardware-diagnosis
+  repository: ""
+  version: 0.21.1
+- name: hardware-monitor
+  repository: ""
+  version: 0.21.1
+- name: kube-prometheus-stack
+  repository: ""
+  version: 69.3.2
+digest: sha256:6489f087b016711b86954d101cbed4061eb8b2d24e268cfcb50791771e76042e
+generated: "2026-01-16T16:44:22.186548215+08:00"

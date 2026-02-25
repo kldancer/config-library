@@ -1,0 +1,5 @@
+images:
+  core:
+    repository: cr.openfuyao.cn/openfuyao/eagle-eye-hardware-diagnosis
+    tag: "latest"
+    pullPolicy: IfNotPresent

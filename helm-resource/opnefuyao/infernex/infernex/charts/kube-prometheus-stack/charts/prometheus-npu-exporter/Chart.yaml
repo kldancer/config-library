@@ -1,0 +1,7 @@
+apiVersion: v1
+appVersion: 7.1.RC1
+description: monitoring
+keywords:
+- monitoring
+name: prometheus-npu-exporter
+version: 0.0.0-latest

@@ -1,0 +1,33 @@
+# rbac.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: cacheindex-sa
+  namespace: {{ .Values.global.namespace | default .Release.Namespace }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: cacheindex-role
+  namespace: {{ .Values.global.namespace | default .Release.Namespace }}
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""]
+  resources: ["pods/status"]
+  verbs: ["get"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: cacheindex-rolebinding
+  namespace: {{ .Values.global.namespace | default .Release.Namespace }}
+subjects:
+- kind: ServiceAccount
+  name: cacheindex-sa
+  namespace: {{ .Values.global.namespace | default .Release.Namespace }}
+roleRef:
+  kind: Role
+  name: cacheindex-role
+  apiGroup: rbac.authorization.k8s.io

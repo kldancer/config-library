@@ -1,0 +1,21 @@
+annotations:
+  cn.openfuyao.component.type: extension
+  cn.openfuyao.image.label: artificial-intelligence
+  org.opencontainers.image.authors: sig-ai-inference
+  org.opencontainers.image.licenses: MulanPSL-2.0
+  org.opencontainers.image.source: https://gitcode.com/openFuyao/hermes-router
+apiVersion: v2
+appVersion: 0.20.1
+dependencies:
+- name: inferencepool
+  repository: file://./charts/inferencepool
+  version: v1.2.1
+description: Hermes-router is an intelligent routing EPP (Endpoint Picker) component
+  built on the K8s GIE framework. It supports multiple routing strategies including
+  kv cache aware and bucket to route inference requests to the most suitable backend
+  service instances, optimizing LLM inference service efficiency and performance.
+keywords:
+- artificial-intelligence
+name: hermes-router
+type: application
+version: 0.20.1

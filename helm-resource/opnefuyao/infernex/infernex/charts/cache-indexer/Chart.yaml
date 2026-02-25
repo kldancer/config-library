@@ -1,0 +1,14 @@
+annotations:
+  cn.openfuyao.component.type: core
+  cn.openfuyao.image.label: artificial-intelligence
+  org.opencontainers.image.authors: sig-ai-inference
+  org.opencontainers.image.licenses: ""
+  org.opencontainers.image.source: https://gitcode.com/openFuyao/cache-indexer
+apiVersion: v2
+appVersion: 0.20.1
+description: cache-indexer is a component that exhibits the actual KV Cache distribution
+  of inference backend nodes in a cluster. It is based on KV event mechanism in vllm.
+keywords:
+- artificial-intelligence
+name: cache-indexer
+version: 0.20.1

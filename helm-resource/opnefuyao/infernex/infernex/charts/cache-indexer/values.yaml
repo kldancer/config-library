@@ -1,0 +1,21 @@
+app:
+  serviceDiscovery: # discovery service for inference backend services
+    labelSelector: "app=vllm"
+    portName: "zmq-pub"
+    refreshInterval: 10
+service:
+  name: cache-indexer-service
+  port: 8080
+global:
+  namespace: ai-inference
+image:
+  repository: cr.openfuyao.cn/openfuyao/cache-indexer
+  tag: "0.20.1"
+  pullPolicy: IfNotPresent
+resources:
+  limits:
+    cpu: 4
+    memory: 16Gi
+  requests:
+    cpu: 4
+    memory: 16Gi

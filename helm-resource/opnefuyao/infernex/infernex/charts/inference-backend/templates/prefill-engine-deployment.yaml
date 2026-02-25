@@ -1,0 +1,202 @@
+{{- range .Values.services }}
+{{- if and .enabled (eq .mode "pd") }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: {{ $.Values.global.namespace }}
+  name: {{ include "vllm.instance.deploymentName" (dict "service" . "Values" $.Values "Chart" $.Chart "Release" $.Release) }}-prefill
+  labels:
+    {{- include "vllm.instance.labels" (dict "service" . "Values" $.Values "Chart" $.Chart "Release" $.Release) | nindent 4 }}
+    {{- if .openfuyao }}
+    openfuyao.com/model: {{ .openfuyao.model | replace "/" "-" | lower }}
+    openfuyao.com/engine: {{ .openfuyao.engine }}
+    openfuyao.com/pdRole: prefill
+    {{- end }}
+    inference-backend: "true"
+spec:
+  {{- with .pd.prefill.replicas }}
+  replicas: {{ . }}
+  {{- else }}
+  replicas: {{ .pd.prefill.replicaAmount | default 1 }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "vllm.instance.selectorLabels" (dict "service" . "Values" $.Values "Chart" $.Chart "Release" $.Release) | nindent 6 }}
+      openfuyao.com/pdRole: prefill
+      {{- if .openfuyao }}
+      openfuyao.com/model: {{ .openfuyao.model | replace "/" "-" | lower }}
+      openfuyao.com/engine: {{ .openfuyao.engine }}
+      {{- if .openfuyao.pdGroupID }}
+      openfuyao.com/pdGroupID: {{ .openfuyao.pdGroupID }}
+      {{- end }}
+      {{- if .pd.prefill.tensorParallelSize }}
+      openfuyao.com/tpSize: {{ .pd.prefill.tensorParallelSize | quote }}
+      {{- else if .openfuyao.tpSize }}
+      openfuyao.com/tpSize: {{ .openfuyao.tpSize | quote }}
+      {{- end }}
+      {{- if .openfuyao.dpSize }}
+      openfuyao.com/dpSize: {{ .openfuyao.dpSize | quote }}
+      {{- end }}
+      {{- end }}
+      inference-backend: "true"
+  template:
+    metadata:
+      annotations:
+        {{- if $.Values.global }}
+        checksum/config: {{ "vllm-config" | sha256sum }}
+        {{- end }}
+      labels:
+        {{- include "vllm.instance.selectorLabels" (dict "service" . "Values" $.Values "Chart" $.Chart "Release" $.Release) | nindent 8 }}
+        openfuyao.com/pdRole: prefill
+        {{- if .openfuyao }}
+        openfuyao.com/model: {{ .openfuyao.model | replace "/" "-" | lower }}
+        openfuyao.com/engine: {{ .openfuyao.engine }}
+        {{- if .openfuyao.pdGroupID }}
+        openfuyao.com/pdGroupID: {{ .openfuyao.pdGroupID }}
+        {{- end }}
+        {{- if .pd.prefill.tensorParallelSize }}
+        openfuyao.com/tpSize: {{ .pd.prefill.tensorParallelSize | quote }}
+        {{- else if .openfuyao.tpSize }}
+        openfuyao.com/tpSize: {{ .openfuyao.tpSize | quote }}
+        {{- end }}
+        {{- if .openfuyao.dpSize }}
+        openfuyao.com/dpSize: {{ .openfuyao.dpSize | quote }}
+        {{- end }}
+        {{- end }}
+        inference-backend: "true"
+    spec:
+      {{- with .imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+      - name: prefill-engine
+        image: "{{ include "vllm.image.repository" (dict "service" . "Values" $.Values "Chart" $.Chart) }}:{{ include "vllm.image.tag" (dict "service" . "Values" $.Values "Chart" $.Chart) }}"
+        imagePullPolicy: {{ include "vllm.image.pullPolicy" (dict "service" . "Values" $.Values) }}
+        command: ["/bin/bash", "-c"]
+        args:
+        - |
+          # PHYSICAL_DEVICES stands for the physical devices assigned to the container
+          export PHYSICAL_DEVICES=$(ls /dev/davinci* 2>/dev/null | grep -o '[0-9]\+' | sort -n | paste -sd',' -)
+          mkdir -p /app
+
+          # 生成JSON配置文件
+          JSON_CONTENT="{\"local_hostname\": \"$POD_IP\", \"device_name\": \"\",\"protocol\":\"ascend\"}"
+          echo "$JSON_CONTENT" > /app/mooncake.json
+
+          # 启动vllm服务
+          MOONCAKE_CONFIG_PATH=/app/mooncake.json python3 -m vllm.entrypoints.openai.api_server \
+            --model {{ .model.name }} \
+            {{- if .pd.prefill.enablePrefixCaching }}
+            --enable-prefix-caching \
+            {{- else }}
+            --no-enable-prefix-caching \
+            {{- end }}
+            --port {{ .pd.prefill.port | default 8100 }} \
+            --tensor-parallel-size {{ .pd.prefill.tensorParallelSize }} \
+            --max-model-len {{ .pd.prefill.maxModelLen | default 10000 }} \
+            --max-num-batched-tokens {{ .pd.prefill.maxNumBatchedTokens | default 2000 }} \
+            --data-parallel-size {{ .pd.prefill.dataParallelSize }} \
+            --data-parallel-address localhost \
+            --data-parallel-rpc-port {{ .pd.prefill.dataParallelRpcPort | default 9100 }} \
+            --gpu-memory-utilization {{ .pd.prefill.gpuMemoryUtilization | default 0.8 }} \
+            --block-size {{ .pd.prefill.blockSize | default 128 }} \
+            --scheduling-policy "{{ if .pd.prefill.batchRequest }}priority{{ else }}fcfs{{ end }}" \
+            --kv-events-config '{"enable_kv_cache_events": true, "publisher":"zmq", "topic":"kv-events"}' \
+            {{- if .pd.kvTransferConfig }}
+            --kv-transfer-config '{
+              "kv_connector": "{{ .pd.kvTransferConfig.kv_connector }}",
+              "kv_role": "kv_producer",
+              "kv_buffer_device": "{{ .pd.kvTransferConfig.kv_buffer_device | default "npu" }}",
+              "kv_connector_module_path": "{{ .pd.kvTransferConfig.kv_connector_module_path }}",
+              "kv_parallel_size": {{ .pd.kvTransferConfig.kv_parallel_size | default 1 }},
+              "kv_port": "{{ .pd.prefill.connectorBasePort }}",
+              "engine_id": "'$POD_NAME'",
+              "kv_rank": 0,
+              "kv_connector_extra_config": {
+                "prefill": {
+                  "tp_size": {{ .pd.prefill.tensorParallelSize }},
+                  "dp_size": {{ .pd.prefill.dataParallelSize }}
+                },
+                "decode": {
+                  "tp_size": {{ .pd.decode.tensorParallelSize }},
+                  "dp_size": {{ .pd.decode.dataParallelSize }}
+                }
+              }
+            }'
+            {{- end }}
+        ports:
+        - name: prefill-port
+          containerPort: {{ .pd.prefill.port | default 8100 }}
+        - name: zmq-pub
+          containerPort: 5557
+        env:
+        {{- include "vllm.env" (dict "service" . "Values" $.Values) | nindent 8 }}
+        {{- include "vllm.podEnv" . | nindent 8 }}
+        - name: GLOO_SOCKET_IFNAME
+          value: "eth0"
+        - name: TP_SOCKET_IFNAME
+          value: "eth0"
+        - name: HCCL_SOCKET_IFNAME
+          value: "eth0"
+        {{- if .pd.prefill.batchRequest }}
+        - name: BATCH_BY_REQUEST_LENGTH
+          value: "{{ .pd.prefill.batchRequest }}"
+        {{- end }}
+        resources:
+          {{- $baseResources := .resources | default $.Values.global.resources | default (dict "requests" dict "limits" dict) }}
+          {{- include "vllm.pd.resources" (dict "tensorParallelSize" .pd.prefill.tensorParallelSize "dataParallelSize" .pd.prefill.dataParallelSize "baseResources" $baseResources) | nindent 10 }}
+        volumeMounts:
+        {{- include "vllm.defaultVolumeMounts" (dict "service" . "Values" $.Values) | nindent 8 }}
+        {{- if $.Values.global.volumeMounts }}
+        {{- $.Values.global.volumeMounts | toYaml | nindent 8 }}
+        {{- end }}
+        {{- if .pd.prefill.volumeMounts }}
+        {{- .pd.prefill.volumeMounts | toYaml | nindent 8 }}
+        {{- end }}
+        {{- if .volumeMounts }}
+        {{- .volumeMounts | toYaml | nindent 8 }}
+        {{- end }}
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: prefill-port
+          initialDelaySeconds: 300
+          periodSeconds: 30
+          timeoutSeconds: 10
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: prefill-port
+          initialDelaySeconds: 150
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+      volumes:
+      {{- include "vllm.defaultVolumes" (dict "service" . "Values" $.Values) | nindent 6 }}
+      {{- if $.Values.global.volumes }}
+      {{- $.Values.global.volumes | toYaml | nindent 6 }}
+      {{- end }}
+      {{- if .pd.prefill.volumes }}
+      {{- .pd.prefill.volumes | toYaml | nindent 6 }}
+      {{- end }}
+      {{- if .volumes }}
+      {{- .volumes | toYaml | nindent 6 }}
+      {{- end }}
+      {{- with .nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}
+{{- end }}
+

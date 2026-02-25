@@ -1,0 +1,8 @@
+{{- if eq (include "prometheus.installed" .) "false" }}
+{{- if eq (include "npu.exporter.installed" .) "false" }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: npu-exporter
+{{- end }}
+{{- end }}

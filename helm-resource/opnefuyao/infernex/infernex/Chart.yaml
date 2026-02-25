@@ -1,0 +1,55 @@
+annotations:
+  cn.openfuyao.component.type: extension
+  cn.openfuyao.image.label: artificial-intelligence
+  org.opencontainers.image.authors: sig-ai-inference
+  org.opencontainers.image.licenses: MulanPSL-2.0
+  org.opencontainers.image.source: https://gitcode.com/openFuyao/infernex
+apiVersion: v2
+appVersion: 0.21.2
+dependencies:
+- name: gateway-api-crds
+  repository: file://./charts/gateway-api-crds
+  version: 1.4.1
+- name: gateway-api-inference-extension-crds
+  repository: file://./charts/gateway-api-inference-extension-crds
+  version: 1.2.1
+- alias: istio-base
+  name: base
+  repository: file://./charts/base
+  version: 1.28.1
+- alias: istio-istiod
+  name: istiod
+  repository: https://istio-release.storage.googleapis.com/charts
+  version: 1.28.1
+- name: inference-backend
+  repository: file://./charts/inference-backend
+  version: 0.21.2
+- name: hermes-router
+  repository: oci://cr.openfuyao.cn/charts
+  version: 0.20.1
+- name: cache-indexer
+  repository: oci://cr.openfuyao.cn/charts
+  version: 0.20.1
+- condition: hardware-monitor-diagnosis.enabled
+  name: nats
+  repository: ""
+  version: 2.12.1
+- condition: hardware-monitor-diagnosis.enabled
+  name: hardware-diagnosis
+  repository: ""
+  version: 0.21.1
+- condition: hardware-monitor-diagnosis.enabled
+  name: hardware-monitor
+  repository: ""
+  version: 0.21.1
+- condition: kube-prometheus-stack.enabled
+  name: kube-prometheus-stack
+  repository: ""
+  version: 69.3.2
+description: The end-to-end deployment package for openFuyao AI inference service
+  framework.
+keywords:
+- artificial-intelligence
+name: infernex
+type: application
+version: 0.21.2

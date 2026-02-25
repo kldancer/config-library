@@ -1,0 +1,7 @@
+apiVersion: v1
+appVersion: 0.17.3
+description: monitoring
+keywords:
+- monitoring
+name: prometheus-nats-exporter
+version: 0.17.3

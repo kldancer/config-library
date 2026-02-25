@@ -1,0 +1,128 @@
+global:
+  namespace: "ai-inference"
+  image:
+    repository: cr.openfuyao.cn/openfuyao/vllm-ascend
+    pullPolicy: IfNotPresent
+    tag: "0.11.0-rc3.of.1"
+  
+  env:
+    - name: VLLM_USE_V1
+      value: "1"
+
+  cachePath: "/home/llm_cache"
+
+services:
+  - name: vllm-pd-2p1d
+    enabled: false
+    mode: pd
+    service:
+      type: ClusterIP
+      port: 8000
+    model:
+      name: "Qwen/Qwen3-8B"
+
+    openfuyao:
+      model: "Qwen/Qwen3-8B"
+      engine: vllm
+      pdGroupID: "qwen3-8b-pd-01"
+    
+    pd:
+      kvTransferConfig:
+        kv_connector: "MooncakeConnectorV1"
+        kv_connector_module_path: "vllm_ascend.distributed.mooncake_connector"
+        kv_buffer_device: "npu"
+        kv_parallel_size: 1
+      
+      prefill:
+        replicaAmount: 1
+        port: 8000
+        enablePrefixCaching: true
+        tensorParallelSize: 2
+        dataParallelSize: 1
+        maxModelLen: 10000
+        maxNumBatchedTokens: 2000
+        dataParallelRpcPort: 9100
+        gpuMemoryUtilization: 0.8
+        blockSize: 128
+        batchRequest: true
+        connectorBasePort: 20001
+      
+      decode:
+        replicaAmount: 1
+        port: 8000
+        enablePrefixCaching: false
+        tensorParallelSize: 1
+        dataParallelSize: 1
+        maxModelLen: 10000
+        maxNumBatchedTokens: 40960
+        dataParallelRpcPort: 9100
+        gpuMemoryUtilization: 0.8
+        connectorBasePort: 20002
+      
+      proxyServer:
+        port: 8000
+        discoveryInterval: 10
+        serviceAccountName: vllm-proxy-sa
+
+    resources:
+      requests:
+        cpu: "8"
+        memory: "32Gi"
+      limits:
+        cpu: "16"
+        memory: "64Gi"
+
+    env:
+      - name: OMP_PROC_BIND
+        value: "false"
+      - name: OMP_NUM_THREADS
+        value: "10"
+      - name: HCCL_BUFFSIZE
+        value: "512"
+      - name: TASK_QUEUE_ENABLE
+        value: "1"
+      - name: HCCL_OP_EXPANSION_MODE
+        value: "AIV"
+      - name: VLLM_ASCEND_ENABLE_DENSE_OPTIMIZE
+        value: "1"
+
+  - name: vllm-aggregated-tp2
+    enabled: true
+    mode: aggregated
+    replicas: 1
+    model:
+      name: "Qwen/Qwen3-8B"
+    service:
+      type: ClusterIP
+      port: 8000
+        
+    openfuyao:
+      model: "Qwen/Qwen3-8B"
+      engine: vllm
+      pdRole: aggregated
+
+    aggregated:
+      enablePrefixCaching: true
+      port: 8000
+      tensorParallelSize: 2
+      dataParallelSize: 1
+      gpuMemoryUtilization: 0.8
+      blockSize: 128
+      maxModelLen: 10000
+      maxNumBatchedTokens: 40960
+    
+    resources:
+      requests:
+        cpu: "8"
+        memory: "32Gi"
+      limits:
+        cpu: "16"
+        memory: "64Gi"
+
+    env:
+      - name: OMP_PROC_BIND
+        value: "false"
+      - name: OMP_NUM_THREADS
+        value: "10"
+      - name: HCCL_BUFFSIZE
+        value: "512"

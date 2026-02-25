@@ -1,0 +1,182 @@
+{{- range .Values.services }}
+{{- if and .enabled (eq .mode "aggregated") }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: {{ $.Values.global.namespace }}
+  name: {{ include "vllm.instance.deploymentName" (dict "service" . "Values" $.Values "Chart" $.Chart "Release" $.Release) }}
+  labels:
+    {{- include "vllm.instance.labels" (dict "service" . "Values" $.Values "Chart" $.Chart "Release" $.Release) | nindent 4 }}
+    {{- if .openfuyao }}
+    openfuyao.com/model: {{ .openfuyao.model | replace "/" "-" | lower }}
+    openfuyao.com/engine: {{ .openfuyao.engine }}
+    openfuyao.com/pdRole: {{ .openfuyao.pdRole }}
+    {{- end }}
+    inference-backend: "true"
+spec:
+  {{- with .replicas }}
+  replicas: {{ . }}
+  {{- else }}
+  replicas: 1
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "vllm.instance.selectorLabels" (dict "service" . "Values" $.Values "Chart" $.Chart "Release" $.Release) | nindent 6 }}
+      {{- if .openfuyao }}
+      openfuyao.com/model: {{ .openfuyao.model | replace "/" "-" | lower }}
+      openfuyao.com/engine: {{ .openfuyao.engine }}
+      openfuyao.com/pdRole: {{ .openfuyao.pdRole }}
+      {{- if .aggregated.tensorParallelSize }}
+      openfuyao.com/tpSize: {{ .aggregated.tensorParallelSize | quote }}
+      {{- end }}
+      {{- if .aggregated.dataParallelSize }}
+      openfuyao.com/dpSize: {{ .aggregated.dataParallelSize | quote }}
+      {{- end }}
+      {{- end }}
+      inference-backend: "true"
+  template:
+    metadata:
+      annotations:
+        {{- if $.Values.global }}
+        checksum/config: {{ "vllm-config" | sha256sum }}
+        {{- end }}
+      labels:
+        {{- include "vllm.instance.selectorLabels" (dict "service" . "Values" $.Values "Chart" $.Chart "Release" $.Release) | nindent 8 }}
+        {{- if .openfuyao }}
+        openfuyao.com/model: {{ .openfuyao.model | replace "/" "-" | lower }}
+        openfuyao.com/engine: {{ .openfuyao.engine }}
+        openfuyao.com/pdRole: {{ .openfuyao.pdRole }}
+        {{- if .openfuyao.pdGroupID }}
+        openfuyao.com/pdGroupID: {{ .openfuyao.pdGroupID }}
+        {{- end }}
+        {{- if .aggregated.tensorParallelSize }}
+        openfuyao.com/tpSize: {{ .aggregated.tensorParallelSize | quote }}
+        {{- end }}
+        {{- if .aggregated.dataParallelSize }}
+        openfuyao.com/dpSize: {{ .aggregated.dataParallelSize | quote }}
+        {{- end }}
+        {{- end }}
+        inference-backend: "true"
+    spec:
+      {{- with .imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+      - name: vllm
+        image: "{{ include "vllm.image.repository" (dict "service" . "Values" $.Values "Chart" $.Chart) }}:{{ include "vllm.image.tag" (dict "service" . "Values" $.Values "Chart" $.Chart) }}"
+        imagePullPolicy: {{ include "vllm.image.pullPolicy" (dict "service" . "Values" $.Values) }}
+        command:
+        - vllm
+        - serve
+        - {{ .model.name }}
+        args:
+        {{- if .aggregated.enablePrefixCaching }}
+        - --enable-prefix-caching
+        {{- else }}
+        - --no-enable-prefix-caching
+        {{- end }}
+        - --port
+        - {{ (.aggregated.port | default 8000) | quote }}
+        {{- if .aggregated.tensorParallelSize }}
+        - --tensor-parallel-size
+        - {{ (int .aggregated.tensorParallelSize) | quote }}
+        {{- end }}
+        {{- if .aggregated.dataParallelSize }}
+        - --data-parallel-size
+        - {{ (int .aggregated.dataParallelSize) | quote }}
+        {{- end }}
+        {{- if .aggregated.gpuMemoryUtilization }}
+        - --gpu-memory-utilization
+        - {{ .aggregated.gpuMemoryUtilization | quote }}
+        {{- end }}
+        {{- if .aggregated.blockSize }}
+        - --block-size
+        - {{ (int .aggregated.blockSize) | quote }}
+        {{- end }}
+        {{- if .aggregated.maxNumSeqs }}
+        - --max-num-seqs
+        - {{ (int .aggregated.maxNumSeqs) | quote }}
+        {{- end }}
+        {{- if .aggregated.maxModelLen }}
+        - --max-model-len
+        - {{ (int .aggregated.maxModelLen) | quote }}
+        {{- end }}
+        {{- if .aggregated.maxNumBatchedTokens }}
+        - --max-num-batched-tokens
+        - {{ (int .aggregated.maxNumBatchedTokens) | quote }}
+        {{- end }}
+        - --kv-events-config
+        - '{"enable_kv_cache_events": true, "publisher":"zmq", "topic":"kv-events"}'
+        {{- if .aggregated.extraArgs }}
+        {{- range .aggregated.extraArgs }}
+        - {{ . | quote }}
+        {{- end }}
+        {{- end }}
+        ports:
+        - name: http-api
+          containerPort: {{ .service.port }}
+        - name: zmq-pub
+          containerPort: 5557
+        {{- $env := include "vllm.env" (dict "service" . "Values" $.Values) | trim }}
+        {{- $podEnv := include "vllm.podEnv" . | trim }}
+        {{- if or $env $podEnv }}
+        env:
+        {{- if $env }}
+        {{- $env | nindent 8 }}
+        {{- end }}
+        {{- if $podEnv }}
+        {{- $podEnv | nindent 8 }}
+        {{- end }}
+        {{- end }}
+        resources:
+          {{- $baseResources := .resources | default $.Values.global.resources | default (dict "requests" dict "limits" dict) }}
+          {{- include "vllm.pd.resources" (dict "tensorParallelSize" (.aggregated.tensorParallelSize | default 1) "dataParallelSize" (.aggregated.dataParallelSize | default 1) "baseResources" $baseResources) | nindent 10 }}
+        volumeMounts:
+        {{- include "vllm.defaultVolumeMounts" (dict "service" . "Values" $.Values) | nindent 8 }}
+        {{- if $.Values.global.volumeMounts }}
+        {{- $.Values.global.volumeMounts | toYaml | nindent 8 }}
+        {{- end }}
+        {{- if .volumeMounts }}
+        {{- .volumeMounts | toYaml | nindent 8 }}
+        {{- end }}
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: http-api
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          timeoutSeconds: 10
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: http-api
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+      volumes:
+      {{- include "vllm.defaultVolumes" (dict "service" . "Values" $.Values) | nindent 6 }}
+      {{- if $.Values.global.volumes }}
+      {{- $.Values.global.volumes | toYaml | nindent 6 }}
+      {{- end }}
+      {{- if .volumes }}
+      {{- .volumes | toYaml | nindent 6 }}
+      {{- end }}
+      {{- with .nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}
+{{- end }}
+

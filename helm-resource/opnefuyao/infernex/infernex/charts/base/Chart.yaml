@@ -1,0 +1,6 @@
+apiVersion: v2
+appVersion: 1.28.1
+description: A Helm chart for istio-base
+name: base
+type: application
+version: 1.28.1

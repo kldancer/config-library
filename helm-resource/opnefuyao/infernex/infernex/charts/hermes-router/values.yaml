@@ -1,0 +1,65 @@
+global:
+  name: vllm-qwen-qwen3-8b
+  namespace: "ai-inference"
+inferencepool:
+  inferenceExtension:
+    replicas: 1
+    image:
+      name: hermes-router
+      hub: cr.openfuyao.cn/openfuyao
+      tag: 0.20.1
+      pullPolicy: IfNotPresent
+    extProcPort: 9002
+    pluginsConfigFile: "epp-aggregate-kv-cache-aware.yaml"
+    pluginsCustomConfig:
+      epp-aggregate-kv-cache-aware.yaml: |
+        apiVersion: inference.networking.x-k8s.io/v1alpha1
+        kind: EndpointPickerConfig
+        plugins:
+        - type: scorer-aggregate-kv-cache-aware
+          parameters:
+            kvCacheHitNotRateWeight: 1.0
+            xpuCacheUsageWeight: 1.0
+            waitingRequestWeight: 1.0
+            kvCacheManagerIP: cache-indexer-service
+            kvCacheManagerPort: 8080
+            kvCacheManagerPath: /match_sort
+            kvCacheManagerTimeout: 10
+        - type: picker-min-random
+        schedulingProfiles:
+        - name: default
+          plugins:
+          - pluginRef: scorer-aggregate-kv-cache-aware
+          - pluginRef: picker-min-random
+    flags:
+      v: 4
+      refresh-metrics-interval: "1s"
+    affinity: {}
+  inferencePool:
+    targetPorts:
+      - number: 8000
+    modelServerType: vllm # vllm, triton-tensorrt-llm
+    apiVersion: inference.networking.k8s.io/v1
+    modelServers: # REQUIRED
+      matchLabels:
+        openfuyao.com/model: qwen-qwen3-8b
+  provider:
+    name: istio
+    istio:
+      destinationRule:
+        host: ""
+        trafficPolicy:
+          tls:
+            mode: SIMPLE
+            insecureSkipVerify: true
+httpRoute:
+  parentRef:
+    group: "gateway.networking.k8s.io"
+    kind: "Gateway"
+    name: "inference-gateway"
+  backend:
+    group: "inference.networking.k8s.io"
+    kind: "InferencePool"
+    name: "vllm-qwen-qwen3-8b"
+  pathPrefix: "/"
+  requestTimeout: "300s"

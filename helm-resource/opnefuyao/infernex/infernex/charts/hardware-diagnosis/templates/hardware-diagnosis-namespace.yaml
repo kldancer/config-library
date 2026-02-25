@@ -1,0 +1,6 @@
+{{- if eq (include "eagle-eye.namespaceExists" .) "false" }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: eagle-eye
+{{- end }}

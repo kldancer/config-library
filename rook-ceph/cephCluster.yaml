@@ -1,0 +1,53 @@
+apiVersion: ceph.rook.io/v1
+kind: CephCluster
+metadata:
+  name: rook-ceph
+  namespace: rook-ceph
+spec:
+  dataDirHostPath: /var/lib/rook
+  cephVersion:
+    image: jusuan.io:8080/ceph/ceph:v19
+  mon:
+    count: 3
+    allowMultiplePerNode: false
+
+  mgr:
+    count: 2
+    allowMultiplePerNode: false
+
+  dashboard:
+    enabled: true
+
+  # --- 网络配置核心部分 ---
+  network:
+    provider: multus
+    selectors:
+      # 只把 cluster 网络放到存储网：复制/回填更干净
+      cluster: rook-ceph/ovn-ceph-cluster-net
+
+  storage:
+    useAllNodes: false
+    nodes:
+      - name: worker-1
+        devices:
+          - name: /dev/sdb
+      - name: worker-gpu-1
+        devices:
+          - name: /dev/sdb
+      - name: worker-gpu-2
+        devices:
+          - name: /dev/sdb
+
+    # 关键：跳过升级检查，防止因网络波动导致的误判
+  skipUpgradeChecks: false
+  continueUpgradeAfterChecksEvenIfNotHealthy: false
+
+  # 建议显式配置 crash collector，方便排查 Ceph 进程崩溃原因
+  crashCollector:
+    disable: false
+
+  # 监控配置
+#  monitoring:
+#    enabled: true
+#
+

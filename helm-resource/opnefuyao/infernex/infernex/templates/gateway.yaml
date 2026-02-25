@@ -1,0 +1,21 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: {{ .Values.inferenceGateway.name | default "inference-gateway" }}
+  namespace: {{ .Values.global.namespace | default .Release.Namespace }}
+{{- if .Values.inferenceGateway.annotations }}
+  annotations:
+{{- range $key, $value := .Values.inferenceGateway.annotations }}
+    {{ $key }}: {{ $value | quote }}
+{{- end }}
+{{- end }}
+spec:
+  gatewayClassName: {{ .Values.inferenceGateway.className | default "istio" }}
+  listeners:
+{{- range $i, $l := .Values.inferenceGateway.listeners }}
+  - name: {{ $l.name | default (printf "http-%d" $i) }}
+    port: {{ $l.port | default 80 }}
+    protocol: {{ $l.protocol | default "HTTP" }}
+{{- end }}
+
+

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cache-indexer-deployment
+  namespace: {{ .Values.global.namespace | default .Release.Namespace }}
+  labels:
+    app: cache
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cache
+  template:
+    metadata:
+      labels:
+        app: cache
+    spec:
+      serviceAccountName: cacheindex-sa
+      containers:
+      - name: cache
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: LOG_LEVEL
+          value: "INFO"
+        - name: SERVICE_DISCOVERY_NAMESPACE
+          value: {{ .Values.global.namespace | default .Release.Namespace | quote }}
+        - name: SERVICE_DISCOVERY_LABEL_SELECTOR
+          value: {{ .Values.app.serviceDiscovery.labelSelector | quote }}
+        - name: SERVICE_DISCOVERY_PORT_NAME
+          value: {{ .Values.app.serviceDiscovery.portName | quote }}
+        - name: SERVICE_DISCOVERY_REFRESH_INTERVAL
+          value: {{ .Values.app.serviceDiscovery.refreshInterval | quote }}
+        resources:
+          limits:
+            cpu: {{ .Values.resources.limits.cpu }}
+            memory: {{ .Values.resources.limits.memory }}
+          requests:
+            cpu: {{ .Values.resources.requests.cpu }}
+            memory: {{ .Values.resources.requests.memory }}
+        ports:
+        - containerPort: 28080
+          name: http
