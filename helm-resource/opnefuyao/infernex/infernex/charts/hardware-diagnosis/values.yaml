@@ -3,3 +3,6 @@ images:
     repository: cr.openfuyao.cn/openfuyao/eagle-eye-hardware-diagnosis
     tag: "latest"
     pullPolicy: IfNotPresent
+  init:
+    repository: busybox
+    tag: 1.36.1

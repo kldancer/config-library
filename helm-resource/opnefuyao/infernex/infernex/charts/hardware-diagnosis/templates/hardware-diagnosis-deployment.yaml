@@ -15,7 +15,7 @@ spec:
     spec:
       initContainers:
         - name: wait-for-nats
-          image: busybox:1.36.1
+          image: {{ .Values.images.init.repository }}:{{ .Values.images.init.tag }}
           command:
             - /bin/sh
             - -c

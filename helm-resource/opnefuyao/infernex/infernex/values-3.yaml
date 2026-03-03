@@ -2,9 +2,6 @@ istio-istiod:
   pilot:
     env:
       ENABLE_GATEWAY_API_INFERENCE_EXTENSION: "true"
-  global:
-    hub: jusuan.io:8080/istio
-
 inferenceGateway:
   name: "inference-gateway"
   className: "istio"
@@ -15,7 +12,7 @@ inferenceGateway:
       port: 80
       protocol: HTTP
 global:
-  name: vllm-qwen-qwen3-8b
+  name: vllm-qwen-qwen2-5-7b
   namespace: "ai-inference"
   image:
     repository: cr.openfuyao.cn/openfuyao/vllm-ascend
@@ -67,7 +64,7 @@ hermes-router:
       apiVersion: inference.networking.k8s.io/v1
       modelServers: # REQUIRED
         matchLabels:
-          openfuyao.com/model: qwen-qwen3-8b
+          openfuyao.com/model: qwen-qwen2.5-7b
     provider:
       name: istio
       istio:
@@ -85,7 +82,7 @@ hermes-router:
     backend:
       group: "inference.networking.k8s.io"
       kind: "InferencePool"
-      name: "vllm-qwen-qwen3-8b"
+      name: "vllm-qwen-qwen2-5-7b"
     pathPrefix: "/"
     requestTimeout: "300s"
 inference-backend:
@@ -97,11 +94,11 @@ inference-backend:
         type: ClusterIP
         port: 8000
       model:
-        name: "Qwen/Qwen3-8B"
+        name: "Qwen/Qwen2.5-7B"
       openfuyao:
-        model: "Qwen/Qwen3-8B"
+        model: "Qwen/Qwen2.5-7B"
         engine: vllm
-        pdGroupID: "qwen3-8b-pd-01"
+        pdGroupID: "qwen2.5-7b-pd-01"
       pd:
         kvTransferConfig:
           kv_connector: "MooncakeConnectorV1"
@@ -161,12 +158,12 @@ inference-backend:
       mode: aggregated
       replicas: 1
       model:
-        name: "Qwen/Qwen3-8B"
+        name: "Qwen/Qwen2.5-7B"
       service:
         type: ClusterIP
         port: 8000
       openfuyao:
-        model: "Qwen/Qwen3-8B"
+        model: "Qwen/Qwen2.5-7B"
         engine: vllm
         pdRole: aggregated
       aggregated:
@@ -195,7 +192,7 @@ inference-backend:
 # cache indexer
 cache-indexer:
   app:
-    useOnlineHuggingFace: true
+    useOnlineHuggingFace: false
     cachePath: /home/llm_cache
     serviceDiscovery:
       labelSelector: "inference-backend=true,openfuyao.com/engine=vllm"
@@ -215,31 +212,11 @@ hardware-monitor:
       repository: cr.openfuyao.cn/openfuyao/eagle-eye-hardware-monitor
       tag: "0.21.1"
       pullPolicy: Always
-    init:
-      repository: jusuan.io:8080/library/busybox
-      tag: 1.36.1
 hardware-diagnosis:
   images:
     core:
       repository: cr.openfuyao.cn/openfuyao/eagle-eye-hardware-diagnosis
       tag: "0.21.1"
       pullPolicy: Always
-    init:
-      repository: jusuan.io:8080/library/busybox
-      tag: 1.36.1
 kube-prometheus-stack:
   enabled: false
-nats:
-  container:
-    image:
-      repository: jusuan.io:8080/library/nats
-  reloader:
-    image:
-      repository: jusuan.io:8080/natsio/nats-server-config-reloader
-  promExporter:
-    image:
-      repository: jusuan.io:8080/natsio/prometheus-nats-exporter
-  natsBox:
-    container:
-      image:
-        repository: jusuan.io:8080/natsio/nats-box
