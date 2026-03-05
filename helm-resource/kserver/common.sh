@@ -75,17 +75,11 @@ detect_arch() {
     echo "$arch"
 }
 
-cleanup_bin_dir() {
-    # Remove BIN_DIR if it was created by this script
-    if [[ "${BIN_DIR_CREATED_BY_SCRIPT:-false}" == "true" ]] && [[ -d "${BIN_DIR:-}" ]]; then
-        log_info "Cleaning up BIN_DIR: ${BIN_DIR}"
-        rm -rf "${BIN_DIR}"
-    fi
-}
+
 
 cleanup() {
     # Call all cleanup functions
-    cleanup_bin_dir
+    echo ""
 }
 
 # Set up trap to run cleanup on exit
@@ -123,18 +117,19 @@ log_warning() {
 }
 
 is_positive() {
-  input_val=$1
-  if [[ z$input_val == z ]]; then
-    input_val="no"
-  fi
+  local input_val="${1:-no}"
 
-  if [[ $input_val == '0' || $input_val == "true" || $input_val == 'True' || $input_val == 'yes' || $input_val == 'Yes' || $input_val == 'y' || $input_val == 'Y' ]]; then
-    echo 0
-  elif [[ $input_val == '1' || $input_val == 'false' || $input_val == 'False' || $input_val == 'no' || $input_val == 'No' || $input_val == 'n' || $input_val == 'N' ]]; then
-    echo 1
-  else    
-    echo 2
-  fi
+  case "${input_val}" in
+    0|true|True|yes|Yes|y|Y)
+      return 0  # Success - truthy
+      ;;
+    1|false|False|no|No|n|N)
+      return 1  # Failure - falsy
+      ;;
+    *)
+      return 2  # Invalid input
+      ;;
+  esac
 }
 
 
@@ -373,7 +368,11 @@ update_isvc_config() {
             # Apply each update
             reduce $updates[] as $item (.;
                 if .data[$item.data_key] == null or .data[$item.data_key] == "" then
-                    .
+                    .data[$item.data_key] = (
+                        {}
+                        | setpath_safe($item.path | split("."); $item.value)
+                        | tojson
+                    )
                 else
                     .data[$item.data_key] |= (
                         fromjson
@@ -423,6 +422,32 @@ command_exists() {
     command -v "$1" &>/dev/null
 }
 
+# Retry a command with delay between attempts
+# Usage: retry_command <max_attempts> <delay_seconds> <command...>
+# Example: retry_command 3 5 kubectl apply -k "${RUNTIMES_DIR}"
+# Returns: 0 on success, 1 on failure after all attempts
+retry_command() {
+    local max_attempts="$1"
+    local delay="$2"
+    shift 2
+    local attempt=1
+
+    while [ $attempt -le $max_attempts ]; do
+        if "$@" 2>&1; then
+            return 0
+        fi
+
+        if [ $attempt -lt $max_attempts ]; then
+            log_warning "Command failed, retrying in ${delay} seconds... (attempt $attempt/$max_attempts)"
+            sleep "$delay"
+        else
+            log_error "Command failed after $max_attempts attempts"
+            return 1
+        fi
+        attempt=$((attempt + 1))
+    done
+}
+
 # Compare semantic versions (returns 0 if v1 >= v2, 1 otherwise)
 # Usage: version_gte "v3.17.3" "v3.16.0"
 # Example: version_gte "$current_version" "$required_version" && echo "OK"
@@ -431,33 +456,114 @@ version_gte() {
 }
 
 # ============================================================================
+# Shared Resources Configuration (for dual KServe + LLMISVC installation)
+# ============================================================================
+
+determine_shared_resources_config() {
+    local install_mode="${1}"
+    local enable_kserve="${2}"
+    local enable_llmisvc="${3}"
+
+    if ! is_positive "${enable_kserve}" && ! is_positive "${enable_llmisvc}"; then
+        return
+    fi
+
+    log_info "Determining shared resources configuration (KSERVE=${enable_kserve}, LLMISVC=${enable_llmisvc})..."
+
+    if [ "${install_mode}" = "helm" ]; then
+        determine_shared_resources_helm "${enable_kserve}" "${enable_llmisvc}"
+    elif [ "${install_mode}" = "kustomize" ]; then
+        determine_shared_resources_kustomize
+    else
+        log_error "INSTALL_MODE not set. Must be 'helm' or 'kustomize'"
+        exit 1
+    fi
+}
+
+determine_shared_resources_helm() {
+    local enable_kserve="${1}"
+    local enable_llmisvc="${2}"
+
+    local kserve_installed=$(helm list -n "${KSERVE_NAMESPACE}" -q 2>/dev/null | grep -c "^kserve-resources$" || true)
+    local llmisvc_installed=$(helm list -n "${KSERVE_NAMESPACE}" -q 2>/dev/null | grep -c "^kserve-llmisvc-resources$" || true)
+
+    if [ "${kserve_installed}" = "0" ] && [ "${llmisvc_installed}" = "0" ]; then
+        # First installation - check which components are being enabled
+        if is_positive "${enable_kserve}" && is_positive "${enable_llmisvc}"; then
+            # Both enabled: kserve-resources installs first and creates shared resources
+            log_info "[Helm] First install (both) - kserve-resources creates shared resources, llmisvc-resources does not"
+            LLMISVC_EXTRA_ARGS="${LLMISVC_EXTRA_ARGS:-} --set kserve.createSharedResources=false"
+        elif is_positive "${enable_kserve}" && ! is_positive "${enable_llmisvc}"; then
+            # Only kserve enabled: kserve-resources creates shared resources
+            log_info "[Helm] First install (kserve only) - kserve-resources will create shared resources"
+            # Use default value (true) - no extra args needed
+        elif ! is_positive "${enable_kserve}" && is_positive "${enable_llmisvc}"; then
+            # Only llmisvc enabled: llmisvc-resources creates shared resources
+            log_info "[Helm] First install (llmisvc only) - llmisvc-resources will create shared resources"
+            # Use default value (true) - no extra args needed
+        else
+            # Neither enabled - shouldn't reach here
+            log_error "[Helm] No components enabled"
+            return 1
+        fi
+    elif [ "${kserve_installed}" = "1" ] && [ "${llmisvc_installed}" = "0" ]; then
+        log_info "[Helm] Only kserve-resources installed - setting createSharedResources=false for LLMISVC"
+        LLMISVC_EXTRA_ARGS="${LLMISVC_EXTRA_ARGS:-} --set kserve.createSharedResources=false"
+    elif [ "${kserve_installed}" = "0" ] && [ "${llmisvc_installed}" = "1" ]; then
+        log_info "[Helm] Only kserve-llmisvc-resources installed - setting createSharedResources=false for KSERVE"
+        KSERVE_EXTRA_ARGS="${KSERVE_EXTRA_ARGS:-} --set kserve.createSharedResources=false"
+    else
+        local kserve_has_false=$(helm get values kserve-resources -n "${KSERVE_NAMESPACE}" 2>/dev/null | grep -c "createSharedResources: false" || true)
+
+        if [ "${kserve_has_false}" = "1" ]; then
+            log_info "[Helm] Maintaining createSharedResources=false for KSERVE"
+            KSERVE_EXTRA_ARGS="${KSERVE_EXTRA_ARGS:-} --set kserve.createSharedResources=false"
+        else
+            log_info "[Helm] Setting createSharedResources=false for LLMISVC"
+            LLMISVC_EXTRA_ARGS="${LLMISVC_EXTRA_ARGS:-} --set kserve.createSharedResources=false"
+        fi
+    fi
+}
+
+determine_shared_resources_kustomize() {
+    KSERVE_INSTALLED=$(kubectl get deployment kserve-controller-manager -n "${KSERVE_NAMESPACE}" 2>/dev/null | grep -c "kserve-controller-manager" || true)
+    LLMISVC_INSTALLED=$(kubectl get deployment llmisvc-controller-manager -n "${KSERVE_NAMESPACE}" 2>/dev/null | grep -c "llmisvc-controller-manager" || true)
+
+    export KSERVE_INSTALLED
+    export LLMISVC_INSTALLED
+
+    log_info "[Kustomize] Installation status(0: not installed, 1: installed): KSERVE=${KSERVE_INSTALLED}, LLMISVC=${LLMISVC_INSTALLED}"
+}
+
+# ============================================================================
 # Auto-initialization (runs when this file is sourced)
 # ============================================================================
 
 # Auto-detect and export REPO_ROOT/BIN_DIR/PATH when sourced
-if [[ -z "${REPO_ROOT:-}" ]]; then
-    REPO_ROOT="$(find_repo_root "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")")"
-    export REPO_ROOT
-
-    # Set up BIN_DIR - use repo bin if it exists, otherwise use temp directory
-    if [[ -d "${REPO_ROOT}/bin" ]]; then
-        export BIN_DIR="${REPO_ROOT}/bin"
-    else
-        export BIN_DIR="$(mktemp -d)"
-        log_info "Using temp BIN_DIR: ${BIN_DIR}"
-    fi
-
-    export PATH="${BIN_DIR}:${PATH}"
-fi
+#if [[ -z "${REPO_ROOT:-}" ]]; then
+#    REPO_ROOT="$(find_repo_root "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")")"
+#    export REPO_ROOT
+#
+#    # Set up BIN_DIR - use repo bin if it exists, otherwise use temp directory
+#    if [[ -d "${REPO_ROOT}/bin" ]]; then
+#        export BIN_DIR="${REPO_ROOT}/bin"
+#    else
+#        export BIN_DIR="$(mktemp -d)"
+#        log_info "Using temp BIN_DIR: ${BIN_DIR}"
+#    fi
+#
+#    export PATH="${BIN_DIR}:${PATH}"
+#fi
 
 # Load version dependencies
-KSERVE_DEPS_FILE="${REPO_ROOT}/kserve-deps.env"
+KSERVE_DEPS_FILE="kserve-deps.env"
 if [[ -f "${KSERVE_DEPS_FILE}" ]]; then
     source "${KSERVE_DEPS_FILE}"
 fi
 
 # Load global variables
-GLOBAL_VARS_FILE="${REPO_ROOT}/hack/setup/global-vars.env"
+GLOBAL_VARS_FILE="global-vars.env"
 if [[ -f "${GLOBAL_VARS_FILE}" ]]; then
     source "${GLOBAL_VARS_FILE}"
 fi
+
