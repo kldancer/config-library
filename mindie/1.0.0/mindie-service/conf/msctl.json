@@ -1,0 +1,12 @@
+{
+     "http": {
+          "dstPort" : 9789,
+          "dstIP" : "127.0.0.1",
+          "ca_cert": "./security/ca/ca.pem",                               
+          "tls_cert": "./security/certs/cert.pem",    
+          "tls_key": "./security/keys/cert.key.pem", 
+          "tls_crl": "",
+          "timeout": 60
+     },
+     "log_level": "INFO"
+}

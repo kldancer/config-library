@@ -1,0 +1,7 @@
+Ascend-mindie : MindIE 1.0.0.B092
+mindie-rt: 1.0.0.B092
+mindie-torch: 1.0.0.B092
+mindie-service: 1.0.0.B092
+mindie-llm: 1.0.0.B092
+mindie-sd:1.0.0.B092
+Platform : aarch64

@@ -1,0 +1,11 @@
+
+2025-04-30 06:21:02.462627 180559 LLM log default format: [yyyy-mm-dd hh:mm:ss.uuuuuu][processid] [threadid] [llm] [loglevel][file:line] [error code] msg
+[2025-04-30 06:21:02.462681] [180157] [281464035406048] [llm] [INFO] [post_processing_manager.cpp:146] Get post processing manager
+[2025-04-30 06:21:02.462757] [180157] [281464035406048] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281462926323936
+[2025-04-30 06:21:02.462835] [180157] [281464035406048] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281472804843744
+[2025-04-30 06:21:02.462899] [180157] [281464035406048] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281472796389600
+[2025-04-30 06:21:02.462960] [180157] [281464035406048] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281472754381024
+[2025-04-30 06:21:02.463018] [180157] [281464035406048] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281472613019872
+[2025-04-30 06:21:02.463068] [180157] [281464035406048] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281472569438432
+[2025-04-30 06:21:02.463123] [180157] [281464035406048] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281472527429856
+[2025-04-30 06:21:02.463176] [180157] [281464035406048] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281472485421280

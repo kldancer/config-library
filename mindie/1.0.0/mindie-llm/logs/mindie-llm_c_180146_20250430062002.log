@@ -1,0 +1,9 @@
+
+2025-04-30 06:20:02.030603 180148 LLM log default format: [yyyy-mm-dd hh:mm:ss.uuuuuu][processid] [threadid] [llm] [loglevel][file:line] [error code] msg
+[2025-04-30 06:20:02.030649] [180146] [281473440083776] [llm] [INFO] [llm_manager_impl.cpp:68] LLMRuntime init success!
+[2025-04-30 06:20:02.031841] [180146] [281473440083776] [llm] [INFO] [model_deploy_config.cpp:137] ModelDeployConfig::pySonamelibpython3.11.so
+[2025-04-30 06:20:02.032179] [180146] [281473440083776] [llm] [INFO] [model_deploy_config.cpp:140] ModelDeployConfig::pyManager open fail
+[2025-04-30 06:20:02.032195] [180146] [281473440083776] [llm] [INFO] [model_deploy_config.cpp:204] ModelDeployConfig::vocabSize=152064
+[2025-04-30 06:20:02.036637] [180146] [281473440083776] [llm] [INFO] [llm_manager_impl.cpp:193] InitModelConfig: maxSeqLen=2560, maxInputTokenLen=2048, g_truncation=0, g_truncLen=1
+[2025-04-30 06:21:10.776756] [180146] [281473440083776] [llm] [INFO] [llm_manager_impl.cpp:77] LLMRuntime thread start success!
+[2025-04-30 06:21:25.358460] [180146] [281473440083776] [llm] [INFO] [llm_manager_impl.cpp:94] LLMRuntime thread stop success!

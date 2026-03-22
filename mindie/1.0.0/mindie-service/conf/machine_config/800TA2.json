@@ -1,0 +1,14 @@
+{
+    "BW_GB": "392",
+    "BW_RDMA_Gb": "200",
+    "BWeff": "0.5",
+    "BW_RDMAeff": "0.5",
+    "TFLOPS": "295",
+    "TFLOPSeff": "0.5",
+    "MBW_TB": "1.6",
+    "MBW_TBeff": "0.3",
+    "alpha": "2",
+    "MEMCapacity": "64",
+    "eta_OOM": "0.9",
+    "staticTransferDelay": "0.00001"
+}

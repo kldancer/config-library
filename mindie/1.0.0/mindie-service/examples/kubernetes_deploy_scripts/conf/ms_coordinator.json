@@ -1,0 +1,96 @@
+{
+    "http_config": {
+        "predict_ip": "127.0.0.1",
+        "predict_port": "1025",
+        "manage_ip": "127.0.0.1",
+        "manage_port": "1026",
+        "server_thread_num": 1,
+        "client_thread_num": 1,
+        "http_timeout_seconds": 10,
+        "keep_alive_seconds": 180,
+        "server_name": "MindIE-MS",
+        "user_agent": "Coordinator/1.0"
+    },
+    "request_limit": {
+        "single_node_max_requests": 1000,
+        "max_requests": 10000,
+        "body_limit": 10
+    },
+    "metrics_config": {
+        "enable": false,
+        "trigger_size": 100
+    },
+    "prometheus_metrics_config": {
+        "reuse_time": 3
+    },
+    "exception_config": {
+        "max_retry": 5,
+        "schedule_timeout": 60,
+        "first_token_timeout": 60,
+        "infer_timeout": 300,
+        "tokenizer_timeout": 300
+    },
+    "log_info": {
+        "log_level": "INFO",
+        "to_file": true,
+        "to_stdout": true,
+        "run_log_path": "./logs/ms_coordinator_run_log.txt",
+        "operation_log_path": "./logs/ms_coordinator_operation_log.txt",
+        "max_log_str_size": 4096,
+        "max_log_file_size": 20,
+        "max_log_file_num": 10
+    },
+    "digs_scheduler_config": {
+        "deploy_mode": "single_node",
+        "scheduler_type": "digs_scheduler",
+        "algorithm_type": "cache_affinity",
+        "cache_size": "100",
+        "slots_thresh": "0.05",
+        "block_thresh": "0.05",
+        "max_schedule_count": "10000",
+        "reordering_type": "1",
+        "max_res_num": "5000"
+    },
+    "tls_config": {
+        "controller_server_tls_enable": true,
+        "controller_server_tls_items": {
+            "ca_cert" : "./security/controller/security/certs/ca.pem",
+            "tls_cert": "./security/controller/security/certs/cert.pem",
+            "tls_key": "./security/controller/security/keys/cert.key.pem",
+            "tls_passwd": "./security/controller/security/pass/key_pwd.txt",
+            "kmcKsfMaster": "./security/controller/tools/pmt/master/ksfa",
+            "kmcKsfStandby": "./security/controller/tools/pmt/standby/ksfb",
+            "tls_crl": ""
+        },
+        "request_server_tls_enable": true,
+        "request_server_tls_items": {
+            "ca_cert" : "./security/request/security/certs/ca.pem",
+            "tls_cert": "./security/request/security/certs/cert.pem",
+            "tls_key": "./security/request/security/keys/cert.key.pem",
+            "tls_passwd": "./security/request/security/pass/key_pwd.txt",
+            "kmcKsfMaster": "./security/request/tools/pmt/master/ksfa",
+            "kmcKsfStandby": "./security/request/tools/pmt/standby/ksfb",
+            "tls_crl": ""
+        },
+        "mindie_client_tls_enable": true,
+        "mindie_client_tls_items": {
+            "ca_cert" : "./security/mindie/security/certs/ca.pem",
+            "tls_cert": "./security/mindie/security/certs/cert.pem",
+            "tls_key": "./security/mindie/security/keys/cert.key.pem",
+            "tls_passwd": "./security/mindie/security/pass/key_pwd.txt",
+            "kmcKsfMaster": "./security/mindie/tools/pmt/master/ksfa",
+            "kmcKsfStandby": "./security/mindie/tools/pmt/standby/ksfb",
+            "tls_crl": ""
+        },
+        "mindie_mangment_tls_enable": true,
+        "mindie_mangment_tls_items": {
+            "ca_cert" : "./security/mindie_mgmt/security/certs/ca.pem",
+            "tls_cert": "./security/mindie_mgmt/security/certs/cert.pem",
+            "tls_key": "./security/mindie_mgmt/security/keys/cert.key.pem",
+            "tls_passwd": "./security/mindie_mgmt/security/pass/key_pwd.txt",
+            "kmcKsfMaster": "./security/mindie_mgmt/tools/pmt/master/ksfa",
+            "kmcKsfStandby": "./security/mindie_mgmt/tools/pmt/standby/ksfb",
+            "tls_crl": ""
+        }
+    }
+}

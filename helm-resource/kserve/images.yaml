@@ -1,0 +1,69 @@
+# ============================================================================
+# KServe Infrastructure Image List (v0.17.0 Offline Setup)
+# ============================================================================
+
+00-metal-lb:
+  - quay.io/metallb/controller:v0.15.3
+  - quay.io/metallb/speaker:v0.15.3
+  - quay.io/frrouting/frr:10.4.1
+
+01-cert-manager:
+  - quay.io/jetstack/cert-manager-controller:v1.17.0
+  - quay.io/jetstack/cert-manager-webhook:v1.17.0
+  - quay.io/jetstack/cert-manager-cainjector:v1.17.0
+  - quay.io/jetstack/cert-manager-acmesolver:v1.17.0
+  - quay.io/jetstack/cert-manager-startupapicheck:v1.17.0
+
+03-envoy-gateway:
+  - docker.io/envoyproxy/gateway:v1.6.3
+  - docker.io/envoyproxy/ratelimit:3fb70258
+  - docker.io/envoyproxy/envoy:distroless-v1.36.4
+  - docker.io/envoyproxy/gateway-dev:latest
+
+04-envoy-ai-gateway:
+  - docker.io/envoyproxy/ai-gateway-extproc:v0.5.0
+  - docker.io/envoyproxy/ai-gateway-controller:v0.5.0
+
+05-lws:
+  - registry.k8s.io/lws/lws:0.7.0
+
+06-kserve:
+  # KServe 核心控制器与 Sidecar (统一补全 v0.17.0)
+  - docker.io/kserve/kserve-controller:v0.17.0
+  - docker.io/kserve/agent:v0.17.0
+  - docker.io/kserve/router:v0.17.0
+  - docker.io/kserve/storage-initializer:v0.17.0
+  - docker.io/kserve/kserve-localmodel-controller:v0.17.0
+  - docker.io/kserve/kserve-localmodelnode-agent:v0.17.0
+  - quay.io/brancz/kube-rbac-proxy:v0.18.0
+
+07-llmisvc:
+  # LLM 推理服务控制器
+  - docker.io/kserve/llmisvc-controller:v0.17.0
+  - ghcr.io/llm-d/llm-d-cuda:v0.4.0
+  - ghcr.io/llm-d/llm-d-routing-sidecar:v0.4.0
+  - ghcr.io/llm-d/llm-d-inference-scheduler:v0.4.0
+
+08-kserver-runtime-configs:
+  # 各种框架的模型服务器镜像 (统一同步至 v0.17.0)
+  - docker.io/kserve/sklearnserver:v0.17.0
+  - docker.io/kserve/xgbserver:v0.17.0
+  - docker.io/kserve/huggingfaceserver:v0.17.0
+  - docker.io/kserve/pmmlserver:v0.17.0
+  - docker.io/kserve/predictiveserver:v0.17.0
+  - docker.io/kserve/paddleserver:v0.17.0
+  - docker.io/kserve/lgbserver:v0.17.0
+  - docker.io/kserve/art-explainer:v0.17.0
+  # 第三方推理引擎
+  - docker.io/tensorflow/serving:2.6.2
+  - docker.io/seldonio/mlserver:1.5.0
+  - nvcr.io/nvidia/tritonserver:23.05-py3
+  - docker.io/pytorch/torchserve-kfs:0.9.0
+
+# 特殊说明：大尺寸镜像列表 (供带宽管理参考)
+large-images:
+  - ghcr.io/llm-d/llm-d-cuda:v0.4.0             # ~14GB
+  - nvcr.io/nvidia/tritonserver:23.05-py3       # ~6GB
+  - docker.io/seldonio/mlserver:1.5.0           # ~4.7GB
+  - docker.io/kserve/huggingfaceserver:v0.17.0  # ~3.4GB
+  - docker.io/pytorch/torchserve-kfs:0.9.0      # ~1.1GB

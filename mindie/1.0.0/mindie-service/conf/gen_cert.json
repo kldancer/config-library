@@ -1,0 +1,9 @@
+{
+    "ca_cert": "/path/to/ca.pem",
+    "ca_key": "/path/to/ca.key.pem",
+    "ca_key_pwd": "/path/to/ca_passwd.txt",
+    "cert_config": "/path/to/cert_config.json",
+    "output_path": "/path/to/output_dir",
+    "kmc_ksf_master": "/path/to/tools/pmt/master/ksfa",
+    "kmc_ksf_standby": "/path/to/tools/pmt/standby/ksfb"
+}

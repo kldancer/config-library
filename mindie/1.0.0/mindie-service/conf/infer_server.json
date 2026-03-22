@@ -1,0 +1,31 @@
+{
+    "server_name": "mindie-server",
+    "replicas": 1,
+    "service_port": 31005,
+    "cross_node_num": 2,
+    "service_type": "NodePort",
+    "server_type": "mindie_cross_node",
+    "scheduler": "default",
+    "init_delay": 180,
+    "detect_server_inner_error": true,
+    "liveness_timeout": 10,
+    "liveness_failure_threshold": 1,
+    "readiness_timeout": 10,
+    "readiness_failure_threshold": 1,
+    "resource_requests": {
+        "memory":   256000,
+        "cpu_core": 32000,
+        "npu_type": "Ascend910",
+        "npu_chip_num": 8
+    },
+    "mindie_server_config": {
+        "mies_install_path": "/usr/local/Ascend/mindie/latest/mindie-service",
+        "infer_port": 1025,
+        "management_port": 1026,
+        "enable_tls" : true
+    },
+    "npu_fault_reschedule": true,
+    "termination_grace_period_seconds": 30,
+    "max_unavailable": "50%",
+    "max_surge": "50%"
+}

@@ -1,0 +1,34 @@
+
+2025-04-30 06:43:32.046972 192914 LLM log default format: [yyyy-mm-dd hh:mm:ss.uuuuuu][processid] [threadid] [llm] [loglevel][file:line] [error code] msg
+[2025-04-30 06:43:32.047024] [192912] [281473605431104] [llm] [INFO] [llm_manager_impl.cpp:68] LLMRuntime init success!
+[2025-04-30 06:43:32.048097] [192912] [281473605431104] [llm] [INFO] [model_deploy_config.cpp:137] ModelDeployConfig::pySonamelibpython3.11.so
+[2025-04-30 06:43:32.048331] [192912] [281473605431104] [llm] [INFO] [model_deploy_config.cpp:140] ModelDeployConfig::pyManager open fail
+[2025-04-30 06:43:32.048347] [192912] [281473605431104] [llm] [INFO] [model_deploy_config.cpp:204] ModelDeployConfig::vocabSize=151936
+[2025-04-30 06:43:32.052595] [192912] [281473605431104] [llm] [INFO] [llm_manager_impl.cpp:193] InitModelConfig: maxSeqLen=4096, maxInputTokenLen=2048, g_truncation=0, g_truncLen=1
+[2025-04-30 06:44:53.330722] [192912] [281473605431104] [llm] [INFO] [llm_manager_impl.cpp:77] LLMRuntime thread start success!
+[2025-04-30 06:46:27.106850] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:674] get a new inferRequest, request id is endpoint_common_1
+[2025-04-30 06:46:27.107023] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:735] Insert a new inferRequest, string id is endpoint_common_1, int id is 0, ibis id is 0
+[2025-04-30 06:47:36.588529] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:674] get a new inferRequest, request id is endpoint_common_2
+[2025-04-30 06:47:36.588943] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:735] Insert a new inferRequest, string id is endpoint_common_2, int id is 0, ibis id is 1
+[2025-04-30 06:48:53.683516] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:674] get a new inferRequest, request id is endpoint_common_3
+[2025-04-30 06:48:53.683667] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:735] Insert a new inferRequest, string id is endpoint_common_3, int id is 0, ibis id is 2
+[2025-04-30 06:49:22.399784] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:674] get a new inferRequest, request id is endpoint_common_4
+[2025-04-30 06:49:22.399888] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:735] Insert a new inferRequest, string id is endpoint_common_4, int id is 0, ibis id is 3
+[2025-04-30 06:49:49.774191] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:674] get a new inferRequest, request id is endpoint_common_5
+[2025-04-30 06:49:49.774306] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:735] Insert a new inferRequest, string id is endpoint_common_5, int id is 0, ibis id is 4
+[2025-04-30 06:52:35.604375] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:674] get a new inferRequest, request id is endpoint_common_7
+[2025-04-30 06:52:35.604524] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:735] Insert a new inferRequest, string id is endpoint_common_7, int id is 0, ibis id is 5
+[2025-04-30 06:53:44.757121] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:674] get a new inferRequest, request id is endpoint_common_8
+[2025-04-30 06:53:44.757266] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:735] Insert a new inferRequest, string id is endpoint_common_8, int id is 0, ibis id is 6
+[2025-04-30 06:54:08.242966] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:674] get a new inferRequest, request id is endpoint_common_9
+[2025-04-30 06:54:08.243109] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:735] Insert a new inferRequest, string id is endpoint_common_9, int id is 0, ibis id is 7
+[2025-04-30 06:54:31.751774] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:674] get a new inferRequest, request id is endpoint_common_10
+[2025-04-30 06:54:31.751907] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:735] Insert a new inferRequest, string id is endpoint_common_10, int id is 0, ibis id is 8
+[2025-04-30 06:54:37.586175] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:674] get a new inferRequest, request id is endpoint_common_11
+[2025-04-30 06:54:37.586275] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:735] Insert a new inferRequest, string id is endpoint_common_11, int id is 0, ibis id is 9
+[2025-04-30 06:55:02.414675] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:674] get a new inferRequest, request id is endpoint_common_12
+[2025-04-30 06:55:02.414768] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:735] Insert a new inferRequest, string id is endpoint_common_12, int id is 0, ibis id is 10
+[2025-04-30 06:55:12.164929] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:674] get a new inferRequest, request id is endpoint_common_13
+[2025-04-30 06:55:12.165005] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:735] Insert a new inferRequest, string id is endpoint_common_13, int id is 0, ibis id is 11
+[2025-04-30 06:55:24.362248] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:674] get a new inferRequest, request id is endpoint_common_14
+[2025-04-30 06:55:24.362366] [192912] [281473290530624] [llm] [INFO] [llm_manager_impl.cpp:735] Insert a new inferRequest, string id is endpoint_common_14, int id is 0, ibis id is 12

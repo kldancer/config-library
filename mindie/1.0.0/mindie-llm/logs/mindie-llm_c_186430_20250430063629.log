@@ -1,0 +1,11 @@
+
+2025-04-30 06:36:29.374701 186432 LLM log default format: [yyyy-mm-dd hh:mm:ss.uuuuuu][processid] [threadid] [llm] [loglevel][file:line] [error code] msg
+[2025-04-30 06:36:29.374746] [186430] [281473049030464] [llm] [INFO] [llm_manager_impl.cpp:68] LLMRuntime init success!
+[2025-04-30 06:36:29.375797] [186430] [281473049030464] [llm] [INFO] [model_deploy_config.cpp:137] ModelDeployConfig::pySonamelibpython3.11.so
+[2025-04-30 06:36:29.376054] [186430] [281473049030464] [llm] [INFO] [model_deploy_config.cpp:140] ModelDeployConfig::pyManager open fail
+[2025-04-30 06:36:29.376069] [186430] [281473049030464] [llm] [INFO] [model_deploy_config.cpp:204] ModelDeployConfig::vocabSize=151936
+[2025-04-30 06:36:29.380348] [186430] [281473049030464] [llm] [INFO] [llm_manager_impl.cpp:193] InitModelConfig: maxSeqLen=2560, maxInputTokenLen=2048, g_truncation=0, g_truncLen=1
+[2025-04-30 06:37:52.140093] [186430] [281473049030464] [llm] [INFO] [llm_manager_impl.cpp:77] LLMRuntime thread start success!
+[2025-04-30 06:38:48.416020] [186430] [281472736751424] [llm] [INFO] [llm_manager_impl.cpp:674] get a new inferRequest, request id is endpoint_common_1
+[2025-04-30 06:38:48.416144] [186430] [281472736751424] [llm] [INFO] [llm_manager_impl.cpp:735] Insert a new inferRequest, string id is endpoint_common_1, int id is 0, ibis id is 0
+[2025-04-30 06:42:06.512562] [186430] [281473049030464] [llm] [INFO] [llm_manager_impl.cpp:94] LLMRuntime thread stop success!

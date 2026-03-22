@@ -1,0 +1,24 @@
+
+2025-04-30 06:44:46.873398 193322 LLM log default format: [yyyy-mm-dd hh:mm:ss.uuuuuu][processid] [threadid] [llm] [loglevel][file:line] [error code] msg
+[2025-04-30 06:44:46.873450] [192922] [281464426000608] [llm] [INFO] [post_processing_manager.cpp:146] Get post processing manager
+[2025-04-30 06:44:46.873525] [192922] [281464426000608] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281464068174048
+[2025-04-30 06:44:46.873612] [192922] [281464426000608] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281473381560544
+[2025-04-30 06:44:46.873774] [192922] [281464426000608] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281473198321888
+[2025-04-30 06:44:46.873857] [192922] [281464426000608] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281473156313312
+[2025-04-30 06:44:46.873926] [192922] [281464426000608] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281473114304736
+[2025-04-30 06:44:46.873996] [192922] [281464426000608] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281473072296160
+[2025-04-30 06:44:46.874067] [192922] [281464426000608] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281473030287584
+[2025-04-30 06:44:46.874136] [192922] [281464426000608] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281472988279008
+[2025-04-30 06:46:27.426515] [192922] [281464426000608] [llm] [INFO] [post_processing_manager.cpp:235] sampling method is multinomial
+[2025-04-30 06:47:36.614913] [192922] [281464426000608] [llm] [INFO] [post_processing_manager.cpp:235] sampling method is multinomial
+[2025-04-30 06:48:53.708861] [192922] [281464426000608] [llm] [INFO] [post_processing_manager.cpp:235] sampling method is multinomial
+[2025-04-30 06:49:22.430736] [192922] [281464426000608] [llm] [INFO] [post_processing_manager.cpp:235] sampling method is multinomial
+[2025-04-30 06:49:49.804154] [192922] [281464426000608] [llm] [INFO] [post_processing_manager.cpp:235] sampling method is multinomial
+[2025-04-30 06:52:35.635783] [192922] [281464426000608] [llm] [INFO] [post_processing_manager.cpp:235] sampling method is multinomial
+[2025-04-30 06:53:44.781838] [192922] [281464426000608] [llm] [INFO] [post_processing_manager.cpp:235] sampling method is multinomial
+[2025-04-30 06:54:08.265115] [192922] [281464426000608] [llm] [INFO] [post_processing_manager.cpp:235] sampling method is multinomial
+[2025-04-30 06:54:31.786035] [192922] [281464426000608] [llm] [INFO] [post_processing_manager.cpp:235] sampling method is multinomial
+[2025-04-30 06:54:37.613608] [192922] [281464426000608] [llm] [INFO] [post_processing_manager.cpp:235] sampling method is multinomial
+[2025-04-30 06:55:02.445174] [192922] [281464426000608] [llm] [INFO] [post_processing_manager.cpp:235] sampling method is multinomial
+[2025-04-30 06:55:12.192675] [192922] [281464426000608] [llm] [INFO] [post_processing_manager.cpp:235] sampling method is multinomial
+[2025-04-30 06:55:24.392839] [192922] [281464426000608] [llm] [INFO] [post_processing_manager.cpp:235] sampling method is multinomial

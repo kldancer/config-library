@@ -1,0 +1,12 @@
+
+2025-04-30 06:37:48.825735 186843 LLM log default format: [yyyy-mm-dd hh:mm:ss.uuuuuu][processid] [threadid] [llm] [loglevel][file:line] [error code] msg
+[2025-04-30 06:37:48.825778] [186440] [281464350437600] [llm] [INFO] [post_processing_manager.cpp:146] Get post processing manager
+[2025-04-30 06:37:48.825854] [186440] [281464350437600] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281463995887840
+[2025-04-30 06:37:48.826004] [186440] [281464350437600] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281473164767456
+[2025-04-30 06:37:48.826069] [186440] [281464350437600] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281473122758880
+[2025-04-30 06:37:48.826135] [186440] [281464350437600] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281473080750304
+[2025-04-30 06:37:48.826194] [186440] [281464350437600] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281473038741728
+[2025-04-30 06:37:48.826251] [186440] [281464350437600] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281473030287584
+[2025-04-30 06:37:48.826307] [186440] [281464350437600] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281472954724576
+[2025-04-30 06:37:48.826364] [186440] [281464350437600] [llm] [INFO] [thread_pool.cpp:51] Create pthread id: 281472912716000
+[2025-04-30 06:38:48.741470] [186440] [281464350437600] [llm] [INFO] [post_processing_manager.cpp:235] sampling method is multinomial

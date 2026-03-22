@@ -1,0 +1,114 @@
+{
+  "AllGather": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "Arange": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "FindMax": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "FlashAttention": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "FlashAttentionSoftmaxFp32": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "ForwardRasterize": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "GenSeqLen": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "IndexFill": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "KvCache": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "MatmulAll": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "MindieRTPlugin": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "PadInput": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "PpMatmulI8": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "PpmatmulCube": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "Quant": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "ReshapeAndCache": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "RmsNormAie": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "RmsNormQuant": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "SliceTransGeluMul": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "SplitTrans": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "TomeMerged": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "TomeUnmerged": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "UnpadAddLN": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "UnpadFlashAttentionMix": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "UnpadFlashAttentionMixSd": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "UnpadInput": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "UnpadPagedAttentionMixLlm": {
+    "isGray": false,
+    "isHeavy": false
+  },
+  "Yulu": {
+    "isGray": false,
+    "isHeavy": false
+  }
+}

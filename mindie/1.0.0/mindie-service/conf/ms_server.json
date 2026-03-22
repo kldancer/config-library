@@ -1,0 +1,41 @@
+{
+    "ip": "127.0.0.1",
+    "port": 9789,
+    "k8s_apiserver_ip": "127.0.0.1",
+    "k8s_apiserver_port": 6443,
+    "log_info": {
+        "log_level": "INFO",
+        "run_log_path": "/var/log/mindie-ms/run/log.txt",
+        "operation_log_path": "/var/log/mindie-ms/operation/log.txt"
+    },
+    "ms_status_file": "/var/lib/mindie-ms/status.json",
+    "server_tls_items": {
+        "ca_cert" : "./security/msserver/security/ca/ca.pem",
+        "tls_cert": "./security/msserver/security/certs/cert.pem",
+        "tls_key": "./security/msserver/security/keys/cert.key.pem",
+        "tls_passwd": "./security/msserver/security/pass/key_pwd.txt",
+        "kmcKsfMaster": "./security/msserver/tools/pmt/master/ksfa",
+        "kmcKsfStandby": "./security/msserver/tools/pmt/standby/ksfb",
+        "tls_crl": ""
+    },
+    "client_k8s_tls_enable": true,
+    "client_k8s_tls_items": {
+        "ca_cert" : "./security/kubeclient/security/ca/ca.pem",
+        "tls_cert": "./security/kubeclient/security/certs/cert.pem",
+        "tls_key": "./security/kubeclient/security/keys/cert.key.pem",
+        "tls_passwd": "./security/kubeclient/security/pass/key_pwd.txt",
+        "kmcKsfMaster": "./security/kubeclient/tools/pmt/master/ksfa",
+        "kmcKsfStandby": "./security/kubeclient/tools/pmt/standby/ksfb",
+        "tls_crl": ""
+    },
+    "client_mindie_server_tls_enable": true,
+    "client_mindie_tls_items": {
+        "ca_cert" : "./security/mindieclient/security/ca/ca.pem",
+        "tls_cert": "./security/mindieclient/security/certs/cert.pem",
+        "tls_key": "./security/mindieclient/security/keys/cert.key.pem",
+        "tls_passwd": "./security/mindieclient/security/pass/key_pwd.txt",
+        "kmcKsfMaster": "./security/mindieclient/tools/pmt/master/ksfa",
+        "kmcKsfStandby": "./security/mindieclient/tools/pmt/standby/ksfb",
+        "tls_crl": ""
+    }
+}

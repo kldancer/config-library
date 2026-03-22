@@ -1,0 +1,34 @@
+{
+    "FlashAttentionTik":{
+        "input0":{
+            "dtype":"float16",
+            "format":"FRACTAL_NZ",
+            "name":"q",
+            "paramType":"required"
+        },
+        "input1":{
+            "dtype":"float16",
+            "format":"FRACTAL_NZ",
+            "name":"k",
+            "paramType":"required"
+        },
+        "input2":{
+            "dtype":"float16",
+            "format":"FRACTAL_NZ",
+            "name":"v",
+            "paramType":"required"
+        },
+        "opFile":{
+            "value":"flash_attention_tik"
+        },
+        "opInterface":{
+            "value":"flash_attention_tik"
+        },
+        "output0":{
+            "dtype":"float16",
+            "format":"FRACTAL_NZ",
+            "name":"y",
+            "paramType":"required"
+        }
+    }
+}

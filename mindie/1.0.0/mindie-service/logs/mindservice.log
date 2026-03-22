@@ -1,0 +1,447 @@
+[2025-04-30 06:20:02.039+00:00] [180146] [180148] [server] [INFO] [connector_launcher.cpp:124] : Child handler has been registered, register is back.
+[2025-04-30 06:20:02.039+00:00] [180146] [180148] [server] [INFO] [share_memory.cpp:167] : total shared memory size:386598MB, and available shared memory size:386598MB.
+[2025-04-30 06:20:02.039+00:00] [180146] [180148] [server] [INFO] [share_memory.cpp:168] : [ShareMemory::SharedMemorySizeCheck] shared memory size check success.
+[2025-04-30 06:20:02.056+00:00] [180146] [180148] [server] [INFO] [share_memory.cpp:167] : total shared memory size:386598MB, and available shared memory size:386566MB.
+[2025-04-30 06:20:02.056+00:00] [180146] [180148] [server] [INFO] [share_memory.cpp:168] : [ShareMemory::SharedMemorySizeCheck] shared memory size check success.
+[2025-04-30 06:20:02.073+00:00] [180146] [180148] [server] [INFO] [share_memory.cpp:167] : total shared memory size:386598MB, and available shared memory size:386534MB.
+[2025-04-30 06:20:02.073+00:00] [180146] [180148] [server] [INFO] [share_memory.cpp:168] : [ShareMemory::SharedMemorySizeCheck] shared memory size check success.
+[2025-04-30 06:21:10.777040+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386501MB.
+[2025-04-30 06:21:10.777062+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:21:10.797777+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_180146_0 success.
+[2025-04-30 06:21:10.797878+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386461MB.
+[2025-04-30 06:21:10.797889+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:21:10.818819+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_180146_1 success.
+[2025-04-30 06:21:10.818887+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386421MB.
+[2025-04-30 06:21:10.818897+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:21:10.839793+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_180146_2 success.
+[2025-04-30 06:21:10.839856+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386381MB.
+[2025-04-30 06:21:10.839866+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:21:10.860477+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_180146_3 success.
+[2025-04-30 06:21:10.860538+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386341MB.
+[2025-04-30 06:21:10.860548+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:21:10.881254+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_180146_4 success.
+[2025-04-30 06:21:10.881317+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386301MB.
+[2025-04-30 06:21:10.881327+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:21:10.902007+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_180146_5 success.
+[2025-04-30 06:21:10.902068+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386261MB.
+[2025-04-30 06:21:10.902079+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:21:10.922883+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_180146_6 success.
+[2025-04-30 06:21:10.922946+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386221MB.
+[2025-04-30 06:21:10.922956+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:21:10.943734+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_180146_7 success.
+[2025-04-30 06:21:10.943760+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:375] : [TokenizerPool] Init share memory done with size 8
+[2025-04-30 06:21:10.944612+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 181796
+[2025-04-30 06:21:10.945307+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 181797
+[2025-04-30 06:21:10.945951+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 181798
+[2025-04-30 06:21:10.946586+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 181799
+[2025-04-30 06:21:10.947234+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 181800
+[2025-04-30 06:21:10.947871+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 181801
+[2025-04-30 06:21:10.948534+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 181802
+[2025-04-30 06:21:10.949247+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 181803
+[2025-04-30 06:21:10.949317+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 181796
+[2025-04-30 06:21:10.949336+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 181797
+[2025-04-30 06:21:10.949345+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 181798
+[2025-04-30 06:21:10.949358+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 181799
+[2025-04-30 06:21:10.949383+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 181800
+[2025-04-30 06:21:10.949393+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 181801
+[2025-04-30 06:21:10.949401+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 181802
+[2025-04-30 06:21:10.949411+00:00] [180146] [180148] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 181803
+[2025-04-30 06:21:10.776+00:00] [180146] [180148] [server] [INFO] [ibis_model_instance_block_manager.cpp:38] : BlockManager not using prefix cache
+[2025-04-30 06:21:17.824585+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:322] : [TokenizerPool]Finished to init tokenizer sub process size 8
+[2025-04-30 06:21:17.834280+00:00] [180146] [180148] [server] [INFO] [EndPoint endpoint.cpp:99] Start endpoint success
+[2025-04-30 06:21:25.359+00:00] [180156] [180164] [server] [INFO] [slave_IPC_communicator.cpp:729] : [HandleRcvMsg]Task thread stopped by finalize message
+[2025-04-30 06:21:25.359+00:00] [180156] [180164] [server] [ERROR] [slave_IPC_communicator.cpp:736] : [HandleRcvMsg]slave communicator notify connector to terminate
+[2025-04-30 06:21:25.359+00:00] [180157] [180167] [server] [INFO] [slave_IPC_communicator.cpp:729] : [HandleRcvMsg]Task thread stopped by finalize message
+[2025-04-30 06:21:25.359+00:00] [180157] [180167] [server] [ERROR] [slave_IPC_communicator.cpp:736] : [HandleRcvMsg]slave communicator notify connector to terminate
+[2025-04-30 06:21:25.359+00:00] [180157] [180167] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 15 received, exiting the process
+[2025-04-30 06:21:25.358+00:00] [180146] [180148] [server] [INFO] [model_backend.cpp:511] : [ModelBackend::InstanceFinalize] Start to finalize ModelBackend
+[2025-04-30 06:21:25.330760+00:00] [180146] [180146] [server] [WARN] [llm_daemon.cpp:45] : [Daemon] received exit signal[2]
+[2025-04-30 06:21:26.027972+00:00] [180146] [180148] [server] [WARN] [llm_daemon.cpp:45] : [Daemon] received exit signal[2]
+[2025-04-30 06:21:25.359+00:00] [180156] [180164] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 15 received, exiting the process
+[2025-04-30 06:21:26.363+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:26.954292+00:00] [180146] [180149] [server] [WARN] [llm_daemon.cpp:45] : [Daemon] received exit signal[2]
+[2025-04-30 06:21:26.272+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:26.954+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:26.954+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:27.577+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:27.809+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:28.056+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:27.577+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:27.809+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:28.056+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:28.471+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:28.974+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.008+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.044+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.085+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.107+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.134+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.172+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.211+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.234+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:28.471+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:28.974+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.008+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.044+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.085+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.107+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.134+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.172+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.211+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.234+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.270+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.299+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.334+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.378+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.398+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.436+00:00] [180157] [180157] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.270+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.299+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.334+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.378+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.398+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.436+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.475+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.499+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.538+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.562+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.599+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.636+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.669+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.704+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.727+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.780+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.800+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.827+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.866+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.890+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.931+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:29.968+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:30.000+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:30.036+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:30.070+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:30.100+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:30.124+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:30.165+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:30.193+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:21:30.238+00:00] [180156] [180156] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+mory size check success.
+[2025-04-30 06:21:10.943734+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_180146_7 success.
+[2025-04-30 06:21:10.943760+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:375] : [TokenizerPool] Init share memory done with size 8
+[2025-04-30 06:21:10.944612+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 181796
+[2025-04-30 06:21:10.945307+00:00] [180146] [180148] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 181797
+[2025-04-30 06:21:10.946104+00:00] [181798] [180148] [server] [WARN] [infer_tokenizer.cpp:331] : [TokenizerPool]Begin to process with pid 181798
+[2025-04-30 06:21:10.946173+00:00] [181798] [180148] [server] [WARN] [infer_tokenizer.cpp:879] : Begin start tokenizer sub process pid = 181798
+[2025-04-30 06:21:10.946244+00:00] [181798] [180148] [server] [INFO] [infer_tokenizer.cpp:654] : Create sub process share memory wait success.
+[2025-04-30 06:36:29.382+00:00] [186430] [186432] [server] [INFO] [connector_launcher.cpp:124] : Child handler has been registered, register is back.
+[2025-04-30 06:36:29.382+00:00] [186430] [186432] [server] [INFO] [share_memory.cpp:167] : total shared memory size:386598MB, and available shared memory size:386598MB.
+[2025-04-30 06:36:29.382+00:00] [186430] [186432] [server] [INFO] [share_memory.cpp:168] : [ShareMemory::SharedMemorySizeCheck] shared memory size check success.
+[2025-04-30 06:36:29.399+00:00] [186430] [186432] [server] [INFO] [share_memory.cpp:167] : total shared memory size:386598MB, and available shared memory size:386566MB.
+[2025-04-30 06:36:29.399+00:00] [186430] [186432] [server] [INFO] [share_memory.cpp:168] : [ShareMemory::SharedMemorySizeCheck] shared memory size check success.
+[2025-04-30 06:36:29.416+00:00] [186430] [186432] [server] [INFO] [share_memory.cpp:167] : total shared memory size:386598MB, and available shared memory size:386534MB.
+[2025-04-30 06:36:29.416+00:00] [186430] [186432] [server] [INFO] [share_memory.cpp:168] : [ShareMemory::SharedMemorySizeCheck] shared memory size check success.
+[2025-04-30 06:37:52.140350+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386501MB.
+[2025-04-30 06:37:52.140372+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:37:52.161342+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_186430_0 success.
+[2025-04-30 06:37:52.161437+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386461MB.
+[2025-04-30 06:37:52.161448+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:37:52.182136+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_186430_1 success.
+[2025-04-30 06:37:52.182206+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386421MB.
+[2025-04-30 06:37:52.182217+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:37:52.202906+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_186430_2 success.
+[2025-04-30 06:37:52.202970+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386381MB.
+[2025-04-30 06:37:52.202980+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:37:52.223585+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_186430_3 success.
+[2025-04-30 06:37:52.223647+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386341MB.
+[2025-04-30 06:37:52.223658+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:37:52.244348+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_186430_4 success.
+[2025-04-30 06:37:52.244411+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386301MB.
+[2025-04-30 06:37:52.244421+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:37:52.265158+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_186430_5 success.
+[2025-04-30 06:37:52.265218+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386261MB.
+[2025-04-30 06:37:52.265228+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:37:52.285955+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_186430_6 success.
+[2025-04-30 06:37:52.286018+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386221MB.
+[2025-04-30 06:37:52.286028+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:37:52.306824+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_186430_7 success.
+[2025-04-30 06:37:52.306850+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:375] : [TokenizerPool] Init share memory done with size 8
+[2025-04-30 06:37:52.307671+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 187929
+[2025-04-30 06:37:52.308307+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 187930
+[2025-04-30 06:37:52.308930+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 187931
+[2025-04-30 06:37:52.309536+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 187932
+[2025-04-30 06:37:52.310154+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 187933
+[2025-04-30 06:37:52.310772+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 187934
+[2025-04-30 06:37:52.311410+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 187935
+[2025-04-30 06:37:52.312071+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 187936
+[2025-04-30 06:37:52.312134+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 187929
+[2025-04-30 06:37:52.312156+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 187930
+[2025-04-30 06:37:52.312170+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 187931
+[2025-04-30 06:37:52.312180+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 187932
+[2025-04-30 06:37:52.312204+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 187933
+[2025-04-30 06:37:52.312215+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 187934
+[2025-04-30 06:37:52.312224+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 187935
+[2025-04-30 06:37:52.312233+00:00] [186430] [186432] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 187936
+[2025-04-30 06:37:52.139+00:00] [186430] [186432] [server] [INFO] [ibis_model_instance_block_manager.cpp:38] : BlockManager not using prefix cache
+[2025-04-30 06:37:59.298103+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:322] : [TokenizerPool]Finished to init tokenizer sub process size 8
+[2025-04-30 06:37:59.307570+00:00] [186430] [186432] [server] [INFO] [EndPoint endpoint.cpp:99] Start endpoint success
+[2025-04-30 06:38:48.356511+00:00] [186430] [189528] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 127.0.0.1:34114 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:38:48.416+00:00] [186430] [187926] [server] [INFO] [ibis_request.cpp:62] : Create IBIS request: 0 successfully with batchSize: 1, isSync: 0, maxOutputLen: 512, priority: 5
+[2025-04-30 06:38:48.416+00:00] [186430] [187926] [server] [INFO] [ibis_batch_scheduler.cpp:176] : IBIS Pipeline [0] of WorkFlow Standard_LLM: enqueue sequence: 0
+[2025-04-30 06:38:48.415899+00:00] [186430] [189528] [server] [INFO] [infer_backend_manager.cpp:394] : Backendmanager choose No.0 LLM Backend to forward request
+[2025-04-30 06:38:48.415919+00:00] [186430] [189528] [server] [INFO] [llm_infer_model_instance.cpp:443] : Generating runtime request, id=endpoint_common_1
+[2025-04-30 06:38:48.415945+00:00] [186430] [189528] [server] [INFO] [llm_infer_model_instance.cpp:396] : Forward request requestQueue_ success, id=endpoint_common_1
+[2025-04-30 06:38:48.416168+00:00] [186430] [189528] [server] [INFO] [llm_infer_model_instance.cpp:412] : LLM backend enqueue request finished, request id: endpoint_common_1
+[2025-04-30 06:38:48.416183+00:00] [186430] [189528] [server] [INFO] [EndPoint common_wrapper.cpp:87] Request: endpoint_common_1enter backend forward and return result
+[2025-04-30 06:38:55.813+00:00] [186430] [187924] [server] [INFO] [gmis_agent_local_worker.cpp:97] : IBIS worker begin to execute responseCallback for request: 0
+[2025-04-30 06:38:55.813+00:00] [186430] [187924] [server] [INFO] [ibis_request_manager.cpp:181] : IBIS requestManager release request: 0
+[2025-04-30 06:38:55.815482+00:00] [186430] [189528] [server] [INFO] [EndPoint common_wrapper.cpp:270] ResponseCallback begin to send last response, request id: endpoint_common_1
+[2025-04-30 06:38:55.815598+00:00] [186430] [189528] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 127.0.0.1:1025 ,status code 200, body len 1805
+[2025-04-30 06:42:06.513+00:00] [186440] [186451] [server] [INFO] [slave_IPC_communicator.cpp:729] : [HandleRcvMsg]Task thread stopped by finalize message
+[2025-04-30 06:42:06.513+00:00] [186440] [186451] [server] [ERROR] [slave_IPC_communicator.cpp:736] : [HandleRcvMsg]slave communicator notify connector to terminate
+[2025-04-30 06:42:06.513+00:00] [186441] [186450] [server] [INFO] [slave_IPC_communicator.cpp:729] : [HandleRcvMsg]Task thread stopped by finalize message
+[2025-04-30 06:42:06.514+00:00] [186441] [186450] [server] [ERROR] [slave_IPC_communicator.cpp:736] : [HandleRcvMsg]slave communicator notify connector to terminate
+[2025-04-30 06:42:06.513+00:00] [186440] [186451] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 15 received, exiting the process
+[2025-04-30 06:42:06.514+00:00] [186441] [186450] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 15 received, exiting the process
+[2025-04-30 06:42:06.513+00:00] [186430] [186432] [server] [INFO] [model_backend.cpp:511] : [ModelBackend::InstanceFinalize] Start to finalize ModelBackend
+[2025-04-30 06:42:06.461203+00:00] [186430] [186430] [server] [WARN] [llm_daemon.cpp:45] : [Daemon] received exit signal[2]
+[2025-04-30 06:42:07.242673+00:00] [186430] [186432] [server] [WARN] [llm_daemon.cpp:45] : [Daemon] received exit signal[2]
+[2025-04-30 06:42:07.552+00:00] [186440] [186440] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:07.817+00:00] [186440] [186440] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:07.822+00:00] [186440] [186451] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:07.573+00:00] [186441] [186441] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:07.848+00:00] [186441] [186441] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:07.854+00:00] [186441] [186450] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:08.537+00:00] [186440] [186440] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:08.747+00:00] [186440] [186440] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:08.747+00:00] [186440] [186451] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:08.537+00:00] [186441] [186441] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:08.747+00:00] [186441] [186441] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:08.747+00:00] [186441] [186450] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:10.210+00:00] [186440] [186440] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:10.659+00:00] [186440] [186440] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:10.210+00:00] [186441] [186441] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:10.659+00:00] [186441] [186441] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+[2025-04-30 06:42:10.852+00:00] [186441] [186441] [server] [WARN] [main.cpp:140] : [Backend connector]Signal 2 received, exiting the process
+mory size check success.
+[2025-04-30 06:37:52.306824+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_186430_7 success.
+[2025-04-30 06:37:52.306850+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:375] : [TokenizerPool] Init share memory done with size 8
+[2025-04-30 06:37:52.307671+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 187929
+[2025-04-30 06:37:52.308307+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 187930
+[2025-04-30 06:37:52.308930+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 187931
+[2025-04-30 06:37:52.309536+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 187932
+[2025-04-30 06:37:52.310154+00:00] [186430] [186432] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 187933
+[2025-04-30 06:37:52.310986+00:00] [187934] [186432] [server] [WARN] [infer_tokenizer.cpp:331] : [TokenizerPool]Begin to process with pid 187934
+[2025-04-30 06:37:52.311072+00:00] [187934] [186432] [server] [WARN] [infer_tokenizer.cpp:879] : Begin start tokenizer sub process pid = 187934
+[2025-04-30 06:37:52.311144+00:00] [187934] [186432] [server] [INFO] [infer_tokenizer.cpp:654] : Create sub process share memory wait success.
+[2025-04-30 06:43:32.055+00:00] [192912] [192914] [server] [INFO] [connector_launcher.cpp:124] : Child handler has been registered, register is back.
+[2025-04-30 06:43:32.055+00:00] [192912] [192914] [server] [INFO] [share_memory.cpp:167] : total shared memory size:386598MB, and available shared memory size:386598MB.
+[2025-04-30 06:43:32.055+00:00] [192912] [192914] [server] [INFO] [share_memory.cpp:168] : [ShareMemory::SharedMemorySizeCheck] shared memory size check success.
+[2025-04-30 06:43:32.072+00:00] [192912] [192914] [server] [INFO] [share_memory.cpp:167] : total shared memory size:386598MB, and available shared memory size:386566MB.
+[2025-04-30 06:43:32.072+00:00] [192912] [192914] [server] [INFO] [share_memory.cpp:168] : [ShareMemory::SharedMemorySizeCheck] shared memory size check success.
+[2025-04-30 06:43:32.088+00:00] [192912] [192914] [server] [INFO] [share_memory.cpp:167] : total shared memory size:386598MB, and available shared memory size:386534MB.
+[2025-04-30 06:43:32.088+00:00] [192912] [192914] [server] [INFO] [share_memory.cpp:168] : [ShareMemory::SharedMemorySizeCheck] shared memory size check success.
+[2025-04-30 06:44:53.330991+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386501MB.
+[2025-04-30 06:44:53.331025+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:44:53.352069+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_192912_0 success.
+[2025-04-30 06:44:53.352160+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386461MB.
+[2025-04-30 06:44:53.352170+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:44:53.373173+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_192912_1 success.
+[2025-04-30 06:44:53.373240+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386421MB.
+[2025-04-30 06:44:53.373249+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:44:53.394062+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_192912_2 success.
+[2025-04-30 06:44:53.394123+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386381MB.
+[2025-04-30 06:44:53.394133+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:44:53.415062+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_192912_3 success.
+[2025-04-30 06:44:53.415124+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386341MB.
+[2025-04-30 06:44:53.415133+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:44:53.436060+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_192912_4 success.
+[2025-04-30 06:44:53.436121+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386301MB.
+[2025-04-30 06:44:53.436130+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:44:53.457072+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_192912_5 success.
+[2025-04-30 06:44:53.457134+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386261MB.
+[2025-04-30 06:44:53.457144+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:44:53.478065+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_192912_6 success.
+[2025-04-30 06:44:53.478130+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:192] : Total shared memory size:386598MB, and available shared memory size:386221MB.
+[2025-04-30 06:44:53.478140+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:193] : [ShareTokenMemory::SharedMemorySizeCheck] Shared memory size check success.
+[2025-04-30 06:44:53.499536+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:247] : [ShareTokenMemory::Create] Create share memory /llm_tokenizer_shared_memory_192912_7 success.
+[2025-04-30 06:44:53.499576+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:375] : [TokenizerPool] Init share memory done with size 8
+[2025-04-30 06:44:53.500468+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 194560
+[2025-04-30 06:44:53.501109+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 194561
+[2025-04-30 06:44:53.501694+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 194562
+[2025-04-30 06:44:53.502320+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 194563
+[2025-04-30 06:44:53.502941+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 194564
+[2025-04-30 06:44:53.503568+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 194565
+[2025-04-30 06:44:53.504214+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 194566
+[2025-04-30 06:44:53.504900+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:341] : [TokenizerPool]Started tokenizer sub process with pid 194567
+[2025-04-30 06:44:53.504963+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 194560
+[2025-04-30 06:44:53.504982+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 194561
+[2025-04-30 06:44:53.504995+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 194562
+[2025-04-30 06:44:53.505008+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 194563
+[2025-04-30 06:44:53.505024+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 194564
+[2025-04-30 06:44:53.505033+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 194565
+[2025-04-30 06:44:53.505041+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 194566
+[2025-04-30 06:44:53.505049+00:00] [192912] [192914] [server] [INFO] [infer_tokenizer.cpp:296] : Create and wait process success, sub pid 194567
+[2025-04-30 06:44:53.330+00:00] [192912] [192914] [server] [INFO] [ibis_model_instance_block_manager.cpp:38] : BlockManager not using prefix cache
+[2025-04-30 06:45:00.235640+00:00] [192912] [192914] [server] [WARN] [infer_tokenizer.cpp:322] : [TokenizerPool]Finished to init tokenizer sub process size 8
+[2025-04-30 06:45:00.245360+00:00] [192912] [192914] [server] [INFO] [EndPoint endpoint.cpp:99] Start endpoint success
+[2025-04-30 06:46:27.055240+00:00] [192912] [196604] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 221.214.11.216:53550 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:46:27.106+00:00] [192912] [194557] [server] [INFO] [ibis_request.cpp:62] : Create IBIS request: 0 successfully with batchSize: 1, isSync: 0, maxOutputLen: 1025, priority: 5
+[2025-04-30 06:46:27.107+00:00] [192912] [194557] [server] [INFO] [ibis_batch_scheduler.cpp:176] : IBIS Pipeline [0] of WorkFlow Standard_LLM: enqueue sequence: 0
+[2025-04-30 06:46:27.106668+00:00] [192912] [196604] [server] [INFO] [infer_backend_manager.cpp:394] : Backendmanager choose No.0 LLM Backend to forward request
+[2025-04-30 06:46:27.106734+00:00] [192912] [196604] [server] [INFO] [llm_infer_model_instance.cpp:443] : Generating runtime request, id=endpoint_common_1
+[2025-04-30 06:46:27.106775+00:00] [192912] [196604] [server] [INFO] [llm_infer_model_instance.cpp:396] : Forward request requestQueue_ success, id=endpoint_common_1
+[2025-04-30 06:46:27.107057+00:00] [192912] [196604] [server] [INFO] [llm_infer_model_instance.cpp:412] : LLM backend enqueue request finished, request id: endpoint_common_1
+[2025-04-30 06:46:27.107072+00:00] [192912] [196604] [server] [INFO] [EndPoint common_wrapper.cpp:87] Request: endpoint_common_1enter backend forward and return result
+[2025-04-30 06:46:27.107137+00:00] [192912] [196604] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 192.168.0.113:1025 ,status code 200, body len 0
+[2025-04-30 06:46:32.272+00:00] [192912] [194555] [server] [INFO] [gmis_agent_local_worker.cpp:97] : IBIS worker begin to execute responseCallback for request: 0
+[2025-04-30 06:46:32.272+00:00] [192912] [194555] [server] [INFO] [ibis_request_manager.cpp:181] : IBIS requestManager release request: 0
+[2025-04-30 06:46:32.273222+00:00] [192912] [196604] [server] [INFO] [EndPoint common_wrapper.cpp:362] ResponseCallback begin to send last response, request id: endpoint_common_1
+[2025-04-30 06:47:36.533421+00:00] [192912] [196607] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 221.214.11.204:44731 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:47:36.588402+00:00] [192912] [196607] [server] [INFO] [infer_backend_manager.cpp:394] : Backendmanager choose No.0 LLM Backend to forward request
+[2025-04-30 06:47:36.588425+00:00] [192912] [196607] [server] [INFO] [llm_infer_model_instance.cpp:443] : Generating runtime request, id=endpoint_common_2
+[2025-04-30 06:47:36.588463+00:00] [192912] [196607] [server] [INFO] [llm_infer_model_instance.cpp:396] : Forward request requestQueue_ success, id=endpoint_common_2
+[2025-04-30 06:47:36.588984+00:00] [192912] [196607] [server] [INFO] [llm_infer_model_instance.cpp:412] : LLM backend enqueue request finished, request id: endpoint_common_2
+[2025-04-30 06:47:36.589000+00:00] [192912] [196607] [server] [INFO] [EndPoint common_wrapper.cpp:87] Request: endpoint_common_2enter backend forward and return result
+[2025-04-30 06:47:36.788968+00:00] [192912] [196607] [server] [INFO] [EndPoint common_wrapper.cpp:270] ResponseCallback begin to send last response, request id: endpoint_common_2
+[2025-04-30 06:47:36.789064+00:00] [192912] [196607] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 192.168.0.113:1025 ,status code 200, body len 341
+[2025-04-30 06:47:36.588+00:00] [192912] [194557] [server] [INFO] [ibis_request.cpp:62] : Create IBIS request: 1 successfully with batchSize: 1, isSync: 0, maxOutputLen: 5, priority: 5
+[2025-04-30 06:47:36.588+00:00] [192912] [194557] [server] [INFO] [ibis_batch_scheduler.cpp:176] : IBIS Pipeline [0] of WorkFlow Standard_LLM: enqueue sequence: 1
+[2025-04-30 06:47:36.788+00:00] [192912] [194555] [server] [INFO] [gmis_agent_local_worker.cpp:97] : IBIS worker begin to execute responseCallback for request: 1
+[2025-04-30 06:47:36.788+00:00] [192912] [194555] [server] [INFO] [ibis_request_manager.cpp:181] : IBIS requestManager release request: 1
+[2025-04-30 06:48:53.632055+00:00] [192912] [196609] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 221.214.11.204:51846 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:48:53.683379+00:00] [192912] [196609] [server] [INFO] [infer_backend_manager.cpp:394] : Backendmanager choose No.0 LLM Backend to forward request
+[2025-04-30 06:48:53.683403+00:00] [192912] [196609] [server] [INFO] [llm_infer_model_instance.cpp:443] : Generating runtime request, id=endpoint_common_3
+[2025-04-30 06:48:53.683440+00:00] [192912] [196609] [server] [INFO] [llm_infer_model_instance.cpp:396] : Forward request requestQueue_ success, id=endpoint_common_3
+[2025-04-30 06:48:53.683696+00:00] [192912] [196609] [server] [INFO] [llm_infer_model_instance.cpp:412] : LLM backend enqueue request finished, request id: endpoint_common_3
+[2025-04-30 06:48:53.683710+00:00] [192912] [196609] [server] [INFO] [EndPoint common_wrapper.cpp:87] Request: endpoint_common_3enter backend forward and return result
+[2025-04-30 06:48:53.683749+00:00] [192912] [196609] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 192.168.0.113:1025 ,status code 200, body len 0
+[2025-04-30 06:48:53.683+00:00] [192912] [194557] [server] [INFO] [ibis_request.cpp:62] : Create IBIS request: 2 successfully with batchSize: 1, isSync: 0, maxOutputLen: 2048, priority: 5
+[2025-04-30 06:48:53.683+00:00] [192912] [194557] [server] [INFO] [ibis_batch_scheduler.cpp:176] : IBIS Pipeline [0] of WorkFlow Standard_LLM: enqueue sequence: 2
+[2025-04-30 06:49:05.696768+00:00] [192912] [196609] [server] [INFO] [EndPoint common_wrapper.cpp:362] ResponseCallback begin to send last response, request id: endpoint_common_3
+[2025-04-30 06:49:05.695+00:00] [192912] [194555] [server] [INFO] [gmis_agent_local_worker.cpp:97] : IBIS worker begin to execute responseCallback for request: 2
+[2025-04-30 06:49:05.695+00:00] [192912] [194555] [server] [INFO] [ibis_request_manager.cpp:181] : IBIS requestManager release request: 2
+[2025-04-30 06:49:22.347421+00:00] [192912] [196611] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 221.214.11.204:24064 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:49:22.399696+00:00] [192912] [196611] [server] [INFO] [infer_backend_manager.cpp:394] : Backendmanager choose No.0 LLM Backend to forward request
+[2025-04-30 06:49:22.399718+00:00] [192912] [196611] [server] [INFO] [llm_infer_model_instance.cpp:443] : Generating runtime request, id=endpoint_common_4
+[2025-04-30 06:49:22.399749+00:00] [192912] [196611] [server] [INFO] [llm_infer_model_instance.cpp:396] : Forward request requestQueue_ success, id=endpoint_common_4
+[2025-04-30 06:49:22.399913+00:00] [192912] [196611] [server] [INFO] [llm_infer_model_instance.cpp:412] : LLM backend enqueue request finished, request id: endpoint_common_4
+[2025-04-30 06:49:22.399925+00:00] [192912] [196611] [server] [INFO] [EndPoint common_wrapper.cpp:87] Request: endpoint_common_4enter backend forward and return result
+[2025-04-30 06:49:22.399963+00:00] [192912] [196611] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 192.168.0.113:1025 ,status code 200, body len 0
+[2025-04-30 06:49:22.955044+00:00] [192912] [196611] [server] [INFO] [EndPoint common_wrapper.cpp:362] ResponseCallback begin to send last response, request id: endpoint_common_4
+[2025-04-30 06:49:22.399+00:00] [192912] [194557] [server] [INFO] [ibis_request.cpp:62] : Create IBIS request: 3 successfully with batchSize: 1, isSync: 0, maxOutputLen: 2048, priority: 5
+[2025-04-30 06:49:22.399+00:00] [192912] [194557] [server] [INFO] [ibis_batch_scheduler.cpp:176] : IBIS Pipeline [0] of WorkFlow Standard_LLM: enqueue sequence: 3
+[2025-04-30 06:49:22.954+00:00] [192912] [194555] [server] [INFO] [gmis_agent_local_worker.cpp:97] : IBIS worker begin to execute responseCallback for request: 3
+[2025-04-30 06:49:22.954+00:00] [192912] [194555] [server] [INFO] [ibis_request_manager.cpp:181] : IBIS requestManager release request: 3
+[2025-04-30 06:49:49.770571+00:00] [192912] [196613] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 221.214.11.204:30842 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:49:49.774048+00:00] [192912] [196613] [server] [INFO] [infer_backend_manager.cpp:394] : Backendmanager choose No.0 LLM Backend to forward request
+[2025-04-30 06:49:49.774087+00:00] [192912] [196613] [server] [INFO] [llm_infer_model_instance.cpp:443] : Generating runtime request, id=endpoint_common_5
+[2025-04-30 06:49:49.774120+00:00] [192912] [196613] [server] [INFO] [llm_infer_model_instance.cpp:396] : Forward request requestQueue_ success, id=endpoint_common_5
+[2025-04-30 06:49:49.774334+00:00] [192912] [196613] [server] [INFO] [llm_infer_model_instance.cpp:412] : LLM backend enqueue request finished, request id: endpoint_common_5
+[2025-04-30 06:49:49.774346+00:00] [192912] [196613] [server] [INFO] [EndPoint common_wrapper.cpp:87] Request: endpoint_common_5enter backend forward and return result
+[2025-04-30 06:49:49.774385+00:00] [192912] [196613] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 192.168.0.113:1025 ,status code 200, body len 0
+[2025-04-30 06:49:49.774+00:00] [192912] [194557] [server] [INFO] [ibis_request.cpp:62] : Create IBIS request: 4 successfully with batchSize: 1, isSync: 0, maxOutputLen: 2048, priority: 5
+[2025-04-30 06:49:49.774+00:00] [192912] [194557] [server] [INFO] [ibis_batch_scheduler.cpp:176] : IBIS Pipeline [0] of WorkFlow Standard_LLM: enqueue sequence: 4
+[2025-04-30 06:49:52.051886+00:00] [192912] [196613] [server] [INFO] [EndPoint common_wrapper.cpp:362] ResponseCallback begin to send last response, request id: endpoint_common_5
+[2025-04-30 06:49:52.051+00:00] [192912] [194555] [server] [INFO] [gmis_agent_local_worker.cpp:97] : IBIS worker begin to execute responseCallback for request: 4
+[2025-04-30 06:49:52.051+00:00] [192912] [194555] [server] [INFO] [ibis_request_manager.cpp:181] : IBIS requestManager release request: 4
+[2025-04-30 06:52:04.653507+00:00] [192912] [196615] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 221.214.11.216:36410 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:52:04.653640+00:00] [192912] [196615] [server] [ERROR] [EndPoint common_wrapper.cpp:38] Convert string to json object exception, cbId=6
+[2025-04-30 06:52:04.653665+00:00] [192912] [196615] [server] [ERROR] [EndPoint common_infer.cpp:216] Failed to parse request context to json for id=endpoint_common_6
+[2025-04-30 06:52:04.653679+00:00] [192912] [196615] [server] [ERROR] [common_infer.cpp:113] : [MIE04E02040E] [endpoint] Failed to parse context to json body for id=endpoint_common_6
+[2025-04-30 06:52:04.653751+00:00] [192912] [196615] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 192.168.0.113:1025 ,status code 422, body len 89
+[2025-04-30 06:52:35.602897+00:00] [192912] [196617] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 221.214.11.216:47128 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:52:35.604251+00:00] [192912] [196617] [server] [INFO] [infer_backend_manager.cpp:394] : Backendmanager choose No.0 LLM Backend to forward request
+[2025-04-30 06:52:35.604271+00:00] [192912] [196617] [server] [INFO] [llm_infer_model_instance.cpp:443] : Generating runtime request, id=endpoint_common_7
+[2025-04-30 06:52:35.604325+00:00] [192912] [196617] [server] [INFO] [llm_infer_model_instance.cpp:396] : Forward request requestQueue_ success, id=endpoint_common_7
+[2025-04-30 06:52:35.604555+00:00] [192912] [196617] [server] [INFO] [llm_infer_model_instance.cpp:412] : LLM backend enqueue request finished, request id: endpoint_common_7
+[2025-04-30 06:52:35.604568+00:00] [192912] [196617] [server] [INFO] [EndPoint common_wrapper.cpp:87] Request: endpoint_common_7enter backend forward and return result
+[2025-04-30 06:52:35.604607+00:00] [192912] [196617] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 192.168.0.113:1025 ,status code 200, body len 0
+[2025-04-30 06:52:35.604+00:00] [192912] [194557] [server] [INFO] [ibis_request.cpp:62] : Create IBIS request: 5 successfully with batchSize: 1, isSync: 0, maxOutputLen: 1025, priority: 5
+[2025-04-30 06:52:35.604+00:00] [192912] [194557] [server] [INFO] [ibis_batch_scheduler.cpp:176] : IBIS Pipeline [0] of WorkFlow Standard_LLM: enqueue sequence: 5
+[2025-04-30 06:52:40.207+00:00] [192912] [194555] [server] [INFO] [gmis_agent_local_worker.cpp:97] : IBIS worker begin to execute responseCallback for request: 5
+[2025-04-30 06:52:40.207+00:00] [192912] [194555] [server] [INFO] [ibis_request_manager.cpp:181] : IBIS requestManager release request: 5
+[2025-04-30 06:52:40.208520+00:00] [192912] [196617] [server] [INFO] [EndPoint common_wrapper.cpp:362] ResponseCallback begin to send last response, request id: endpoint_common_7
+[2025-04-30 06:53:44.755803+00:00] [192912] [196619] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 221.214.11.214:59480 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:53:44.756988+00:00] [192912] [196619] [server] [INFO] [infer_backend_manager.cpp:394] : Backendmanager choose No.0 LLM Backend to forward request
+[2025-04-30 06:53:44.757008+00:00] [192912] [196619] [server] [INFO] [llm_infer_model_instance.cpp:443] : Generating runtime request, id=endpoint_common_8
+[2025-04-30 06:53:44.757053+00:00] [192912] [196619] [server] [INFO] [llm_infer_model_instance.cpp:396] : Forward request requestQueue_ success, id=endpoint_common_8
+[2025-04-30 06:53:44.757297+00:00] [192912] [196619] [server] [INFO] [llm_infer_model_instance.cpp:412] : LLM backend enqueue request finished, request id: endpoint_common_8
+[2025-04-30 06:53:44.757311+00:00] [192912] [196619] [server] [INFO] [EndPoint common_wrapper.cpp:87] Request: endpoint_common_8enter backend forward and return result
+[2025-04-30 06:53:44.947449+00:00] [192912] [196619] [server] [INFO] [EndPoint common_wrapper.cpp:270] ResponseCallback begin to send last response, request id: endpoint_common_8
+[2025-04-30 06:53:44.947526+00:00] [192912] [196619] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 192.168.0.113:1025 ,status code 200, body len 341
+[2025-04-30 06:53:44.757+00:00] [192912] [194557] [server] [INFO] [ibis_request.cpp:62] : Create IBIS request: 6 successfully with batchSize: 1, isSync: 0, maxOutputLen: 5, priority: 5
+[2025-04-30 06:53:44.757+00:00] [192912] [194557] [server] [INFO] [ibis_batch_scheduler.cpp:176] : IBIS Pipeline [0] of WorkFlow Standard_LLM: enqueue sequence: 6
+[2025-04-30 06:53:44.946+00:00] [192912] [194555] [server] [INFO] [gmis_agent_local_worker.cpp:97] : IBIS worker begin to execute responseCallback for request: 6
+[2025-04-30 06:53:44.946+00:00] [192912] [194555] [server] [INFO] [ibis_request_manager.cpp:181] : IBIS requestManager release request: 6
+[2025-04-30 06:54:08.243+00:00] [192912] [194557] [server] [INFO] [ibis_request.cpp:62] : Create IBIS request: 7 successfully with batchSize: 1, isSync: 0, maxOutputLen: 2048, priority: 5
+[2025-04-30 06:54:08.243+00:00] [192912] [194557] [server] [INFO] [ibis_batch_scheduler.cpp:176] : IBIS Pipeline [0] of WorkFlow Standard_LLM: enqueue sequence: 7
+[2025-04-30 06:54:08.241518+00:00] [192912] [196621] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 221.214.11.214:59482 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:54:08.242845+00:00] [192912] [196621] [server] [INFO] [infer_backend_manager.cpp:394] : Backendmanager choose No.0 LLM Backend to forward request
+[2025-04-30 06:54:08.242865+00:00] [192912] [196621] [server] [INFO] [llm_infer_model_instance.cpp:443] : Generating runtime request, id=endpoint_common_9
+[2025-04-30 06:54:08.242902+00:00] [192912] [196621] [server] [INFO] [llm_infer_model_instance.cpp:396] : Forward request requestQueue_ success, id=endpoint_common_9
+[2025-04-30 06:54:08.243138+00:00] [192912] [196621] [server] [INFO] [llm_infer_model_instance.cpp:412] : LLM backend enqueue request finished, request id: endpoint_common_9
+[2025-04-30 06:54:08.243152+00:00] [192912] [196621] [server] [INFO] [EndPoint common_wrapper.cpp:87] Request: endpoint_common_9enter backend forward and return result
+[2025-04-30 06:54:08.243189+00:00] [192912] [196621] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 192.168.0.113:1025 ,status code 200, body len 0
+[2025-04-30 06:54:15.288+00:00] [192912] [194555] [server] [INFO] [gmis_agent_local_worker.cpp:97] : IBIS worker begin to execute responseCallback for request: 7
+[2025-04-30 06:54:15.288+00:00] [192912] [194555] [server] [INFO] [ibis_request_manager.cpp:181] : IBIS requestManager release request: 7
+[2025-04-30 06:54:15.289429+00:00] [192912] [196621] [server] [INFO] [EndPoint common_wrapper.cpp:362] ResponseCallback begin to send last response, request id: endpoint_common_9
+[2025-04-30 06:54:31.750199+00:00] [192912] [196623] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 221.214.11.214:59484 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:54:31.751636+00:00] [192912] [196623] [server] [INFO] [infer_backend_manager.cpp:394] : Backendmanager choose No.0 LLM Backend to forward request
+[2025-04-30 06:54:31.751655+00:00] [192912] [196623] [server] [INFO] [llm_infer_model_instance.cpp:443] : Generating runtime request, id=endpoint_common_10
+[2025-04-30 06:54:31.751693+00:00] [192912] [196623] [server] [INFO] [llm_infer_model_instance.cpp:396] : Forward request requestQueue_ success, id=endpoint_common_10
+[2025-04-30 06:54:31.751936+00:00] [192912] [196623] [server] [INFO] [llm_infer_model_instance.cpp:412] : LLM backend enqueue request finished, request id: endpoint_common_10
+[2025-04-30 06:54:31.751949+00:00] [192912] [196623] [server] [INFO] [EndPoint common_wrapper.cpp:87] Request: endpoint_common_10enter backend forward and return result
+[2025-04-30 06:54:31.751990+00:00] [192912] [196623] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 192.168.0.113:1025 ,status code 200, body len 0
+[2025-04-30 06:54:31.751+00:00] [192912] [194557] [server] [INFO] [ibis_request.cpp:62] : Create IBIS request: 8 successfully with batchSize: 1, isSync: 0, maxOutputLen: 2048, priority: 5
+[2025-04-30 06:54:31.751+00:00] [192912] [194557] [server] [INFO] [ibis_batch_scheduler.cpp:176] : IBIS Pipeline [0] of WorkFlow Standard_LLM: enqueue sequence: 8
+[2025-04-30 06:54:32.452813+00:00] [192912] [196623] [server] [INFO] [EndPoint common_wrapper.cpp:362] ResponseCallback begin to send last response, request id: endpoint_common_10
+[2025-04-30 06:54:32.452+00:00] [192912] [194555] [server] [INFO] [gmis_agent_local_worker.cpp:97] : IBIS worker begin to execute responseCallback for request: 8
+[2025-04-30 06:54:32.452+00:00] [192912] [194555] [server] [INFO] [ibis_request_manager.cpp:181] : IBIS requestManager release request: 8
+[2025-04-30 06:54:37.536188+00:00] [192912] [196625] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 221.214.11.214:59486 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:54:37.586097+00:00] [192912] [196625] [server] [INFO] [infer_backend_manager.cpp:394] : Backendmanager choose No.0 LLM Backend to forward request
+[2025-04-30 06:54:37.586119+00:00] [192912] [196625] [server] [INFO] [llm_infer_model_instance.cpp:443] : Generating runtime request, id=endpoint_common_11
+[2025-04-30 06:54:37.586157+00:00] [192912] [196625] [server] [INFO] [llm_infer_model_instance.cpp:396] : Forward request requestQueue_ success, id=endpoint_common_11
+[2025-04-30 06:54:37.586303+00:00] [192912] [196625] [server] [INFO] [llm_infer_model_instance.cpp:412] : LLM backend enqueue request finished, request id: endpoint_common_11
+[2025-04-30 06:54:37.586321+00:00] [192912] [196625] [server] [INFO] [EndPoint common_wrapper.cpp:87] Request: endpoint_common_11enter backend forward and return result
+[2025-04-30 06:54:37.586360+00:00] [192912] [196625] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 192.168.0.113:1025 ,status code 200, body len 0
+[2025-04-30 06:54:37.586+00:00] [192912] [194557] [server] [INFO] [ibis_request.cpp:62] : Create IBIS request: 9 successfully with batchSize: 1, isSync: 0, maxOutputLen: 2048, priority: 5
+[2025-04-30 06:54:37.586+00:00] [192912] [194557] [server] [INFO] [ibis_batch_scheduler.cpp:176] : IBIS Pipeline [0] of WorkFlow Standard_LLM: enqueue sequence: 9
+[2025-04-30 06:54:55.350+00:00] [192912] [194555] [server] [INFO] [gmis_agent_local_worker.cpp:97] : IBIS worker begin to execute responseCallback for request: 9
+[2025-04-30 06:54:55.350+00:00] [192912] [194555] [server] [INFO] [ibis_request_manager.cpp:181] : IBIS requestManager release request: 9
+[2025-04-30 06:54:55.352360+00:00] [192912] [196625] [server] [INFO] [EndPoint common_wrapper.cpp:362] ResponseCallback begin to send last response, request id: endpoint_common_11
+[2025-04-30 06:55:02.409681+00:00] [192912] [196627] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 221.214.11.214:59490 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:55:02.414576+00:00] [192912] [196627] [server] [INFO] [infer_backend_manager.cpp:394] : Backendmanager choose No.0 LLM Backend to forward request
+[2025-04-30 06:55:02.414599+00:00] [192912] [196627] [server] [INFO] [llm_infer_model_instance.cpp:443] : Generating runtime request, id=endpoint_common_12
+[2025-04-30 06:55:02.414625+00:00] [192912] [196627] [server] [INFO] [llm_infer_model_instance.cpp:396] : Forward request requestQueue_ success, id=endpoint_common_12
+[2025-04-30 06:55:02.414794+00:00] [192912] [196627] [server] [INFO] [llm_infer_model_instance.cpp:412] : LLM backend enqueue request finished, request id: endpoint_common_12
+[2025-04-30 06:55:02.414806+00:00] [192912] [196627] [server] [INFO] [EndPoint common_wrapper.cpp:87] Request: endpoint_common_12enter backend forward and return result
+[2025-04-30 06:55:02.414842+00:00] [192912] [196627] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 192.168.0.113:1025 ,status code 200, body len 0
+[2025-04-30 06:55:03.070896+00:00] [192912] [196627] [server] [INFO] [EndPoint common_wrapper.cpp:362] ResponseCallback begin to send last response, request id: endpoint_common_12
+[2025-04-30 06:55:02.414+00:00] [192912] [194557] [server] [INFO] [ibis_request.cpp:62] : Create IBIS request: 10 successfully with batchSize: 1, isSync: 0, maxOutputLen: 16, priority: 5
+[2025-04-30 06:55:02.414+00:00] [192912] [194557] [server] [INFO] [ibis_batch_scheduler.cpp:176] : IBIS Pipeline [0] of WorkFlow Standard_LLM: enqueue sequence: 10
+[2025-04-30 06:55:03.070+00:00] [192912] [194555] [server] [INFO] [gmis_agent_local_worker.cpp:97] : IBIS worker begin to execute responseCallback for request: 10
+[2025-04-30 06:55:03.070+00:00] [192912] [194555] [server] [INFO] [ibis_request_manager.cpp:181] : IBIS requestManager release request: 10
+[2025-04-30 06:55:12.164+00:00] [192912] [194557] [server] [INFO] [ibis_request.cpp:62] : Create IBIS request: 11 successfully with batchSize: 1, isSync: 0, maxOutputLen: 2048, priority: 5
+[2025-04-30 06:55:12.164+00:00] [192912] [194557] [server] [INFO] [ibis_batch_scheduler.cpp:176] : IBIS Pipeline [0] of WorkFlow Standard_LLM: enqueue sequence: 11
+[2025-04-30 06:55:12.162994+00:00] [192912] [196629] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 221.214.11.214:59492 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:55:12.164808+00:00] [192912] [196629] [server] [INFO] [infer_backend_manager.cpp:394] : Backendmanager choose No.0 LLM Backend to forward request
+[2025-04-30 06:55:12.164838+00:00] [192912] [196629] [server] [INFO] [llm_infer_model_instance.cpp:443] : Generating runtime request, id=endpoint_common_13
+[2025-04-30 06:55:12.164874+00:00] [192912] [196629] [server] [INFO] [llm_infer_model_instance.cpp:396] : Forward request requestQueue_ success, id=endpoint_common_13
+[2025-04-30 06:55:12.165034+00:00] [192912] [196629] [server] [INFO] [llm_infer_model_instance.cpp:412] : LLM backend enqueue request finished, request id: endpoint_common_13
+[2025-04-30 06:55:12.165051+00:00] [192912] [196629] [server] [INFO] [EndPoint common_wrapper.cpp:87] Request: endpoint_common_13enter backend forward and return result
+[2025-04-30 06:55:12.165089+00:00] [192912] [196629] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 192.168.0.113:1025 ,status code 200, body len 0
+[2025-04-30 06:55:19.648654+00:00] [192912] [196629] [server] [INFO] [EndPoint common_wrapper.cpp:362] ResponseCallback begin to send last response, request id: endpoint_common_13
+[2025-04-30 06:55:19.647+00:00] [192912] [194555] [server] [INFO] [gmis_agent_local_worker.cpp:97] : IBIS worker begin to execute responseCallback for request: 11
+[2025-04-30 06:55:19.647+00:00] [192912] [194555] [server] [INFO] [ibis_request_manager.cpp:181] : IBIS requestManager release request: 11
+[2025-04-30 06:55:24.362+00:00] [192912] [194557] [server] [INFO] [ibis_request.cpp:62] : Create IBIS request: 12 successfully with batchSize: 1, isSync: 0, maxOutputLen: 2048, priority: 5
+[2025-04-30 06:55:24.362+00:00] [192912] [194557] [server] [INFO] [ibis_batch_scheduler.cpp:176] : IBIS Pipeline [0] of WorkFlow Standard_LLM: enqueue sequence: 12
+[2025-04-30 06:55:24.309899+00:00] [192912] [196631] [server] [INFO] [EndPoint http_server.cpp:47] receive request from 221.214.11.214:59494 ,method:POST, uri:/v1/chat/completions
+[2025-04-30 06:55:24.362112+00:00] [192912] [196631] [server] [INFO] [infer_backend_manager.cpp:394] : Backendmanager choose No.0 LLM Backend to forward request
+[2025-04-30 06:55:24.362152+00:00] [192912] [196631] [server] [INFO] [llm_infer_model_instance.cpp:443] : Generating runtime request, id=endpoint_common_14
+[2025-04-30 06:55:24.362184+00:00] [192912] [196631] [server] [INFO] [llm_infer_model_instance.cpp:396] : Forward request requestQueue_ success, id=endpoint_common_14
+[2025-04-30 06:55:24.362395+00:00] [192912] [196631] [server] [INFO] [llm_infer_model_instance.cpp:412] : LLM backend enqueue request finished, request id: endpoint_common_14
+[2025-04-30 06:55:24.362409+00:00] [192912] [196631] [server] [INFO] [EndPoint common_wrapper.cpp:87] Request: endpoint_common_14enter backend forward and return result
+[2025-04-30 06:55:24.362454+00:00] [192912] [196631] [server] [INFO] [EndPoint http_server.cpp:56] Http receive response from 192.168.0.113:1025 ,status code 200, body len 0
+[2025-04-30 06:55:46.960858+00:00] [192912] [196631] [server] [INFO] [EndPoint common_wrapper.cpp:362] ResponseCallback begin to send last response, request id: endpoint_common_14
+[2025-04-30 06:55:46.959+00:00] [192912] [194555] [server] [INFO] [gmis_agent_local_worker.cpp:97] : IBIS worker begin to execute responseCallback for request: 12
+[2025-04-30 06:55:46.959+00:00] [192912] [194555] [server] [INFO] [ibis_request_manager.cpp:181] : IBIS requestManager release request: 12

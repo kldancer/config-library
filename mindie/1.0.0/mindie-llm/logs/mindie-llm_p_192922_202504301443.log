@@ -1,0 +1,5 @@
+[2025-04-30 06:44:46,875] [192922] [281464426000608] [llm] [INFO] [logging.py-334] : warmup params: max_prefill_tokens=8192, max_seq_len=4096, max_input_len=2048, max_iter_times=2048
+[2025-04-30 06:44:46,878] [192922] [281464426000608] [llm] [INFO] [logging.py-334] : `Prefill blocks` during warmup needs npu memory(GB): 0.009765625
+[2025-04-30 06:44:46,924] [192922] [281464426000608] [llm] [INFO] [logging.py-334] : The effective eos_token_id is `[151645, 151643]`.
+[2025-04-30 06:44:53,176] [192922] [281464426000608] [llm] [INFO] [logging.py-334] : `Total blocks` needs npu memory(GB): 10.7421875
+[2025-04-30 06:44:53,325] [192922] [281464426000608] [llm] [INFO] [logging.py-334] : The effective eos_token_id is `[151645, 151643]`.

@@ -1,0 +1,17 @@
+{
+    "subject": "subject_name",
+    "expired_time": 7300,
+    "serial_number": 123,
+    "req_distinguished_name": {
+        "C": "CN",
+        "ST": "Sichuan",
+        "L": "Chengdu",
+        "O": "Huawei",
+        "OU": "Ascend",
+        "CN": "MindIE"
+    },
+    "alt_names": {
+        "IP": [],
+        "DNS": []
+    }
+}
