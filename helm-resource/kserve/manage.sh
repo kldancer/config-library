@@ -137,7 +137,7 @@ metadata:
   namespace: metallb-system
 spec:
   addresses:
-  - 192.168.31.200-192.168.31.210
+  - 192.168.1.200-192.168.1.210
 ---
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
@@ -331,18 +331,19 @@ manage_step_6() {
 
         log_info "正在创建自定义 EnvoyProxy '${proxy_name}'..."
         cat <<EOF | kubectl apply -f -
+
 apiVersion: gateway.envoyproxy.io/v1alpha1
 kind: EnvoyProxy
 metadata:
   name: ${proxy_name}
   namespace: ${ns}
 spec:
-provider:
-  type: Kubernetes
-  kubernetes:
-    envoyDeployment:
-      container:
-        image: jusuan.io:8080/envoyproxy/envoy:distroless-v1.36.4
+  provider:
+    type: Kubernetes
+    kubernetes:
+      envoyDeployment:
+        container:
+          image: jusuan.io:8080/envoyproxy/envoy:distroless-v1.36.4
 
 EOF
 

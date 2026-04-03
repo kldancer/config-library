@@ -67,3 +67,4 @@ large-images:
   - docker.io/seldonio/mlserver:1.5.0           # ~4.7GB
   - docker.io/kserve/huggingfaceserver:v0.17.0  # ~3.4GB
   - docker.io/pytorch/torchserve-kfs:0.9.0      # ~1.1GB
+  - docker.io/kserve/predictiveserver:v0.17.0   # ~1.1 GB
